@@ -76,50 +76,36 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
 .logo.wide{letter-spacing:.32em; font-weight:500; font-size:17px;}
 .logo.serif{font-family:Georgia,'Times New Roman',serif; font-weight:700; letter-spacing:0; font-size:22px;}
 
-/* ---- close & get paid ---- */
-.flow-wrap{margin:38px auto 0; max-width:960px; padding:0 4px 54px; text-align:left;}
-.scene{position:relative; display:grid; grid-template-columns:1.25fr 1fr; gap:18px; padding:22px 16px 16px; background:rgba(246,241,230,.045); border:1px solid var(--d-line); border-radius:14px; box-shadow:0 30px 60px -30px rgba(0,0,0,.7); overflow:hidden;}
-.progress{position:absolute; left:0; right:0; top:0; height:2px; background:rgba(231,226,213,.08);}
-.progress i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--d-green),var(--d-mint));}
-.half{display:flex; flex-direction:column; gap:10px; min-width:0;}
-.stg-h{display:flex; align-items:center; gap:7px; font-family:'Inter Tight',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--d-bone);}
-.stg-h em{font-style:normal; width:17px; height:17px; border-radius:50%; display:grid; place-items:center; font-size:9.5px; background:var(--d-mint); color:#12261E;}
-.pill{font-size:9px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; border-radius:999px; padding:2.5px 8px; white-space:nowrap; display:inline-block; transition:background .3s, color .3s;}
-.pill.mint{background:var(--d-mint); color:#12261E;} .pill.sage{background:rgba(231,226,213,.13); color:var(--d-sage);}
-/* board */
-.board2{--gap:8px; --rowh:46px; position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:var(--gap); height:calc(24px + 4*var(--rowh) + 12px);}
-.lane{display:flex; flex-direction:column; gap:6px; min-width:0;}
-.lane span{font-size:9px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--d-ink-3); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; text-align:center;}
-.lane i{display:block; height:6px; border-radius:3px; background:rgba(231,226,213,.1); transition:background .3s;}
-.lane:nth-child(2) i{background:rgba(127,196,169,.18);} .lane:nth-child(3) i{background:rgba(127,196,169,.3);} .lane:nth-child(4) i{background:rgba(127,196,169,.5);}
-.lane.flash i{background:var(--d-mint);}
-.chip{position:absolute; top:24px; left:0; width:calc((100% - 3*var(--gap))/4); box-sizing:border-box; background:var(--d-card); color:var(--d-ink); border-radius:7px; padding:6px 8px; box-shadow:0 8px 18px -8px rgba(0,0,0,.6);
-  transform:translate3d(calc(var(--k,0) * (100% + var(--gap))), calc(var(--r,0) * var(--rowh)), 0); transition:transform .65s cubic-bezier(.62,.02,.3,1), background .3s, color .3s, box-shadow .3s;}
-.chip b{display:block; font-family:'Inter Tight',sans-serif; font-size:11px; font-weight:800; letter-spacing:-.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; line-height:1.2;}
-.chip span{display:block; font-size:9.5px; color:var(--d-ink-2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:1px;}
-.chip.lift{box-shadow:0 18px 30px -12px rgba(0,0,0,.7); z-index:3;}
-.chip.closed{background:var(--d-mint); color:#12261E;}
-.chip.closed span{color:#12261E; opacity:.75;}
-/* pay */
-.pay2{background:rgba(246,241,230,.05); border:1px solid var(--d-line); border-radius:10px; padding:10px 12px; display:flex; flex-direction:column; gap:8px; height:100%; box-sizing:border-box;}
-.tally{display:flex; flex-direction:column; gap:2px; padding-bottom:8px; border-bottom:1px solid var(--d-line);}
-.tally span{font-size:9.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--d-ink-3);}
-.tally b{font-family:'Inter Tight',sans-serif; font-size:clamp(22px,3vw,30px); font-weight:800; letter-spacing:-.035em; color:var(--d-bone); line-height:1; transition:color .3s;}
-.tally b.bump{color:var(--d-mint);}
-.entries{display:flex; flex-direction:column; gap:5px;}
-.en{display:grid; grid-template-columns:1fr auto auto; align-items:center; gap:8px; font-size:10.5px; color:var(--d-sage); padding:5px 8px; border-radius:7px; background:rgba(246,241,230,.04); border:1px solid var(--d-line); opacity:1; transform:none; transition:opacity .4s, transform .45s cubic-bezier(.3,1.1,.4,1), border-color .3s, background .3s;}
-.en[hidden]{display:grid; opacity:0; transform:translateX(10px); height:0; padding:0 8px; border-width:0; margin:0; overflow:hidden; pointer-events:none;}
-.en .ea{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.en .ev{font-family:'Inter Tight',sans-serif; font-weight:800; color:var(--d-bone); font-size:11.5px;}
-.en.hl{border-color:rgba(127,196,169,.45); background:rgba(127,196,169,.1);}
-.meter{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:8px; font-size:10.5px; color:var(--d-ink-3); margin-top:auto; padding-top:8px; border-top:1px solid var(--d-line);}
-.meter i{display:block; height:6px; border-radius:3px; background:rgba(231,226,213,.1); overflow:hidden;}
-.meter em{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--d-green),var(--d-mint)); transition:width .9s cubic-bezier(.3,.9,.3,1);}
-.meter em.on{width:var(--pc);}
-.meter b{font-family:'Inter Tight',sans-serif; font-weight:800; color:var(--d-bone); font-size:11.5px;}
-.scene-cap{text-align:center; margin:16px auto 0; font-size:12.5px; color:var(--d-sage); opacity:.9; min-height:1.4em; transition:opacity .3s;}
-.scene-cap.fade{opacity:0;}
-@media (max-width:760px){ .scene{grid-template-columns:1fr;} .pay2{height:auto;} }
+/* ---- the feature map ---- */
+.flow-wrap{margin:34px auto 0; max-width:1000px; padding:0 4px 50px; text-align:left;}
+.map{position:relative; height:520px; max-width:1000px; margin:0 auto;}
+.wires{position:absolute; inset:0; width:100%; height:100%; overflow:visible;}
+.wires line,.wires path{fill:none; stroke:var(--d-mint); stroke-width:1.5; vector-effect:non-scaling-stroke; stroke-dasharray:1; stroke-dashoffset:1; opacity:.55; transition:stroke-dashoffset .55s ease, opacity .3s, stroke .3s;}
+.wires .on{stroke-dashoffset:0;}
+.wires .chord{stroke:var(--d-bone); stroke-width:1.2; opacity:.7;}
+.hub{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:132px; height:132px; border-radius:50%; background:var(--d-card); color:var(--d-ink); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; box-shadow:0 0 0 8px rgba(127,196,169,.08), 0 20px 40px -18px rgba(0,0,0,.7); z-index:3; transition:box-shadow .4s;}
+.hub.pulse{box-shadow:0 0 0 14px rgba(127,196,169,.16), 0 20px 40px -18px rgba(0,0,0,.7);}
+.hub .hub-mark{width:28px; height:28px; border-radius:50%; background:var(--d-green); color:var(--d-card); display:grid; place-items:center;}
+.hub .hub-mark svg{width:15px; height:15px;}
+.hub b{font-family:'Inter Tight',sans-serif; font-size:17px; font-weight:800; letter-spacing:-.02em; margin-top:4px;}
+.hub small{font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--d-ink-3); font-weight:600;}
+.node{position:absolute; transform:translate(-50%,-50%); display:inline-flex; align-items:center; gap:8px; padding:7px 12px 7px 8px; border-radius:999px; background:var(--d-bg); border:1px solid rgba(231,226,213,.16); color:var(--d-ink-3); font-family:'Inter Tight',sans-serif; font-size:12px; font-weight:700; letter-spacing:.01em; white-space:nowrap; z-index:2; transition:border-color .35s, color .35s, background .35s, transform .45s cubic-bezier(.34,1.5,.64,1), box-shadow .35s;}
+.node i{width:22px; height:22px; border-radius:50%; background:rgba(231,226,213,.1); display:grid; place-items:center; flex:none; transition:background .35s, color .35s;}
+.node i svg{width:12px; height:12px;}
+.node.on{border-color:var(--d-mint); color:var(--d-bone); background:rgba(127,196,169,.1); transform:translate(-50%,-50%) scale(1.08); box-shadow:0 12px 26px -12px rgba(0,0,0,.6);}
+.node.on i{background:var(--d-mint); color:#12261E;}
+.node.done{border-color:rgba(127,196,169,.45); color:var(--d-sage);}
+.node.done i{background:rgba(127,196,169,.35); color:var(--d-bone);}
+.map-cap{text-align:center; margin:14px auto 0; max-width:60ch; min-height:3.2em; transition:opacity .3s;}
+.map-cap.fade{opacity:0;}
+.map-cap b{display:block; font-family:'Inter Tight',sans-serif; font-size:14px; font-weight:800; color:var(--d-bone); letter-spacing:-.01em;}
+.map-cap span{font-size:12.5px; color:var(--d-sage); line-height:1.45;}
+@media (max-width:820px){ .map{height:460px;} .node{font-size:11px; padding:5px 10px 5px 6px;} .node i{width:20px; height:20px;} }
+@media (max-width:600px){
+  .map{height:auto; display:grid; grid-template-columns:1fr 1fr; gap:6px; padding-top:0;}
+  .wires{display:none;} .hub{position:relative; left:auto; top:auto; transform:none; grid-column:1/-1; width:100%; height:auto; border-radius:12px; padding:12px; margin-bottom:6px; box-shadow:none;}
+  .nodes{display:contents;} .node{position:static; transform:none !important; justify-content:flex-start; border-radius:10px; white-space:normal;}
+}
 @media (max-width:560px){ .hero{padding:44px 14px 0;} }
 @media (prefers-reduced-motion:reduce){ *{animation:none !important; transition:none !important;} }
 </style>
@@ -128,7 +114,7 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
   <header class="mast">
     <p class="eyebrow">leasync.ai &middot; homepage hero &middot; option B, the simple one</p>
     <h1>Same words, much less going on under the button.</h1>
-    <p>Two things below the button instead of thirteen: a slow, continuous flow of the brokerages already on Leasync, and one animation about what brokers actually care about: deals closing and money landing. Nothing to click.</p>
+    <p>Two things below the button instead of thirteen: a slow, continuous flow of the brokerages already on Leasync, and one animation that connects all twelve features together through Leasync at the centre. Nothing to click.</p>
   </header>
 
   <section style="border-top:0; padding-top:0">
@@ -155,41 +141,14 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
           </div>
         </div>
 
-        <!-- ===== close & get paid: your whole book, moving ===== -->
+        <!-- ===== the feature map: everything connected through Leasync ===== -->
         <div class="flow-wrap" aria-hidden="true">
-          <div class="scene" id="scene">
-            <div class="progress"><i id="prog"></i></div>
-
-            <div class="half">
-              <div class="stg-h"><em>1</em>Close</div>
-              <div class="board2" id="bd">
-                <div class="lane" data-lane><span>Prospect</span><i></i></div>
-                <div class="lane" data-lane><span>Offer / LOI</span><i></i></div>
-                <div class="lane" data-lane><span>Contract</span><i></i></div>
-                <div class="lane" data-lane><span>Closed</span><i></i></div>
-                <div class="chip" data-chip style="--k:2;--r:0"><b>300 York Ave</b><span>Lease &middot; $48.2K</span></div>
-                <div class="chip" data-chip style="--k:1;--r:1"><b>45 Main St</b><span>Sale &middot; $112K</span></div>
-                <div class="chip" data-chip style="--k:0;--r:2"><b>1420 Peachtree</b><span>Lease &middot; $31K</span></div>
-                <div class="chip" data-chip style="--k:0;--r:0"><b>88 Grand St</b><span>Lease &middot; $22K</span></div>
-                <div class="chip" data-chip style="--k:1;--r:3"><b>200 N Michigan</b><span>Sale &middot; $86K</span></div>
-              </div>
-            </div>
-
-            <div class="half">
-              <div class="stg-h"><em>2</em>Get paid</div>
-              <div class="pay2">
-                <div class="tally"><span>Commission booked &middot; YTD</span><b id="tally">$412,600</b></div>
-                <div class="entries" id="entries">
-                  <div class="en" data-en="over"><span class="ea">600 Park Ave</span><span class="ev">$16,098</span><span class="pill sage" id="overPill">Overdue</span></div>
-                  <div class="en" data-en="a" hidden><span class="ea">300 York Ave</span><span class="ev">$48,200</span><span class="pill mint">Received</span></div>
-                  <div class="en" data-en="b" hidden><span class="ea">45 Main St</span><span class="ev">$112,000</span><span class="pill sage">Due at closing</span></div>
-                  <div class="en" data-en="c"><span class="ea">1413 York Ave</span><span class="ev">$12,000</span><span class="pill mint">Received</span></div>
-                </div>
-                <div class="meter"><span>Received</span><i><em id="mfill" style="--pc:62%"></em></i><b id="mv">$0</b></div>
-              </div>
-            </div>
+          <div class="map" id="map">
+            <svg class="wires" viewBox="0 0 1000 520" preserveAspectRatio="none" id="wires"></svg>
+            <div class="hub" id="hub"><span class="hub-mark"><svg viewBox="0 0 16 16" fill="none"><path d="M3 14V6l5-4 5 4v8M6.5 14v-4h3v4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><b>Leasync</b><small>one system</small></div>
+            <div class="nodes" id="nodes"></div>
           </div>
-          <p class="scene-cap" id="scCap">Every deal on one board &mdash; leasing and sales.</p>
+          <div class="map-cap"><b id="capT">Dashboard</b><span id="capS">Your numbers at a glance &mdash; solo, or the whole organization.</span></div>
         </div>
       </div>
     </div>
@@ -202,7 +161,7 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
     </div>
     <div class="notes">
       <div class="note"><h4>1. Active companies, constant flow</h4><p>A logo marquee with no label above it: one row, scrolling right-to-left at about 38 seconds per lap, seamless, faded at both edges, pauses on hover. Pure CSS &mdash; the row is duplicated once and translated by &minus;50%. Wordmarks here are placeholders in type; the site already has the real logos (ARA, Tahari Realty, PrestonBend, Vantage and the others in today&rsquo;s trust bar) &mdash; drop those SVG/PNGs in as <code>&lt;img&gt;</code> and delete the text.</p></div>
-      <div class="note"><h4>2. Close &amp; get paid</h4><p>One panel, two halves, generic to any broker. <b>Close:</b> a four-lane board (Prospect &rsaquo; Offer / LOI &rsaquo; Contract &rsaquo; Closed) with five deals &mdash; leasing and sales &mdash; advancing; when one reaches Closed it turns mint. <b>Get paid:</b> the commission tally counts up as each deal closes and its entry books itself; an overdue payout flips to Received and the received meter fills. Captions narrate three beats. About 16 seconds, then it loops; stacks on phones.</p><p><b>Wording note:</b> the captions say &ldquo;mark it closed, the commission books itself&rdquo; and &ldquo;overdue payouts get chased&rdquo; &mdash; capability, not a measured outcome. We can&rsquo;t write &ldquo;close more deals&rdquo; or &ldquo;earn more&rdquo; until there is data behind it; the animation shows it instead.</p></div>
+      <div class="note"><h4>2. The feature map</h4><p>Leasync sits in the centre; the twelve features from the official list sit around it in a ring. A mint spoke draws to each one in turn as it lights up, and the caption under the map names the feature and gives its one-line summary from your list. After the twelfth, the ring stays lit and the cross-links draw &mdash; email to contacts, contacts to tenants, tenants to spaces, spaces to deals, deals to commissions, agenda to dashboard &mdash; under the caption &ldquo;Everything connected.&rdquo; About 24 seconds, then it loops. On phones the ring becomes a two-column list that lights in the same order.</p></div>
       <div class="note"><h4>Kept from before</h4><ul><li>Pill, headline (mint second line), sub-line, one button. The small-print trust line is gone.</li><li>Inter / Inter Tight only, brand tokens only, no red or orange.</li><li>Reduced-motion: marquee and flow stand still.</li><li>Nothing forces the page wider than a phone.</li></ul></div>
       <div class="note"><h4>What&rsquo;s gone</h4><ul><li>The &ldquo;Preview our features below&rdquo; label and all thirteen previews.</li><li>Lisa, the inbox, tour books, marketplace &mdash; those move to feature sections lower on the page if you want them at all.</li></ul></div>
     </div>
@@ -219,52 +178,66 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
   track.innerHTML += track.innerHTML;
 
   var $=function(id){return document.getElementById(id);};
-  var q=function(sel){return [].slice.call(document.querySelectorAll(sel));};
-  var lanes=q('[data-lane]'), chips=q('[data-chip]'), tally=$('tally'), overPill=$('overPill'), mfill=$('mfill'), mv=$('mv'), prog=$('prog'), cap=$('scCap');
-  var en={}; q('[data-en]').forEach(function(x){en[x.getAttribute('data-en')]=x;});
+  var F=[
+    ['Dashboard','Your numbers at a glance \u2014 solo, or the whole organization.','M2 13h12M4 13V8M8 13V4M12 13V6'],
+    ['AI Agenda','Hit sync and Lisa builds your agenda. A teammate tags you, it lands right here.','M8 1.5 9.4 6l4.6 1.4L9.4 8.9 8 13.5 6.6 8.9 2 7.4 6.6 6 8 1.5Z'],
+    ['Built-in Email','Gmail and Outlook inside Leasync. Lisa summarizes, pulls the contact, files it in one click.','M2 4.5 8 9l6-4.5M2.5 3.5h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Z'],
+    ['Ask Lisa','\u201cHow many deals did I close this month?\u201d Real data, instantly.','M3 3h10v7H7l-3 3v-3H3z'],
+    ['Contacts','Synced from your inbox and sorted \u2014 broker, landlord, tenant \u2014 so the database builds itself.','M8 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM3 14c.6-2.6 2.6-4 5-4s4.4 1.4 5 4'],
+    ['Tenants','Contacts, requirements and every active deal in one view. Tag a teammate; it lands in their agenda.','M3 14V6l5-4 5 4v8M6.5 14v-4h3v4'],
+    ['Tour Books','Pick any spaces and get a polished tour book, ready to send.','M3 2.5h7l3 3v8H3zM5.5 8h5M5.5 10.5h5'],
+    ['Spaces','Work listings toward exclusives. Smart Match connects the right tenants; one click emails them all.','M2 13h12M4 13V5l4-3 4 3v8M6.5 13v-3h3v3'],
+    ['Deals','List or board, leasing or sales. Drag in an LOI and Lisa fills the whole deal. Mark it signed.','M2 4h12v9H2zM2 7h12M5 4V2M11 4V2'],
+    ['Commissions','Every commission tracked \u2014 split, each share, schedule, installments, overdue to paid.','M8 1.6v12.8M11 4.4H6.6a1.9 1.9 0 0 0 0 3.8h2.8a1.9 1.9 0 0 1 0 3.8H4.6'],
+    ['Settings & Control','Themes, rates, regions, permissions. An analytics profile for every agent. Import in one step.','M8 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M3.4 12.6l1.4-1.4M11.2 4.8l1.4-1.4'],
+    ['Marketplace','A private network where Leasync brokers share listings, new spaces added by the minute.','M2 6l1-3h10l1 3M2 6h12v7H2zM6 13V9h4v4']
+  ];
+  // links between features that talk to each other (drawn after the ring completes)
+  var CHORDS=[[2,4],[4,5],[5,7],[7,8],[8,9],[1,0],[6,5],[3,0]];
+  var map=$('map'), wires=$('wires'), nodesEl=$('nodes'), hub=$('hub'), capT=$('capT'), capS=$('capS');
+  var W=1000, H=520, CX=500, CY=260, RX=405, RY=205;
+  var nodes=[], spokes=[], chords=[];
+  F.forEach(function(f,i){
+    var ang=-Math.PI/2 + i*(2*Math.PI/F.length);
+    var x=CX+RX*Math.cos(ang), y=CY+RY*Math.sin(ang);
+    var n=document.createElement('div'); n.className='node'; n.style.left=(x/W*100)+'%'; n.style.top=(y/H*100)+'%';
+    n.innerHTML='<i><svg viewBox="0 0 16 16" fill="none"><path d="'+f[2]+'" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg></i>'+f[0];
+    nodesEl.appendChild(n); nodes.push(n);
+    var l=document.createElementNS('http://www.w3.org/2000/svg','line');
+    var ux=x-CX, uy=y-CY, d=Math.hypot(ux,uy), sx=CX+ux/d*70, sy=CY+uy/d*70;   // start at hub edge
+    l.setAttribute('x1',sx); l.setAttribute('y1',sy); l.setAttribute('x2',x); l.setAttribute('y2',y); l.setAttribute('pathLength','1');
+    wires.appendChild(l); spokes.push(l);
+    n.__xy=[x,y];
+  });
+  CHORDS.forEach(function(c){
+    var a=nodes[c[0]].__xy, b=nodes[c[1]].__xy, p=document.createElementNS('http://www.w3.org/2000/svg','path');
+    var mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2; var k=0.35; var qx=mx+(CX-mx)*k, qy=my+(CY-my)*k;   // bow toward centre
+    p.setAttribute('d','M'+a[0]+' '+a[1]+' Q'+qx+' '+qy+' '+b[0]+' '+b[1]); p.setAttribute('pathLength','1'); p.setAttribute('class','chord');
+    wires.appendChild(p); chords.push(p);
+  });
   var timers=[], still=window.matchMedia('(prefers-reduced-motion: reduce)');
-  var BASE=412600, total=BASE, RECV_BASE=257300;
   function later(fn,ms){timers.push(setTimeout(fn,ms));}
-  function commas(v){return '$'+Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
-  function count(el,from,to,ms){var t0=null;function f(ts){if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/ms);el.textContent=commas(from+(to-from)*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f);}requestAnimationFrame(f);later(function(){el.textContent=commas(to);},ms+60);}
-  function say(t){cap.classList.add('fade'); later(function(){cap.textContent=t; cap.classList.remove('fade');},300);}
-  function move(c,k){ c.classList.add('lift'); later(function(){ c.style.setProperty('--k',k); },120); later(function(){ c.classList.remove('lift'); if(k===3){ c.classList.add('closed'); lanes[3].classList.add('flash'); later(function(){lanes[3].classList.remove('flash');},600);} },800); }
-  function book(key,amount){ en[key].hidden=false; en[key].classList.add('hl'); total+=amount; count(tally,total-amount,total,900); tally.classList.add('bump'); later(function(){tally.classList.remove('bump'); en[key].classList.remove('hl');},1400); }
-  var START=[[2,0],[1,1],[0,2],[0,0],[1,3]];
-  function reset(){
-    chips.forEach(function(c,i){ c.style.transition='none'; c.classList.remove('lift','closed'); c.style.setProperty('--k',START[i][0]); c.style.setProperty('--r',START[i][1]); void c.offsetWidth; c.style.transition=''; });
-    lanes.forEach(function(l){l.classList.remove('flash');});
-    en.a.hidden=true; en.b.hidden=true; Object.keys(en).forEach(function(k){en[k].classList.remove('hl');});
-    overPill.className='pill sage'; overPill.textContent='Overdue';
-    total=BASE; tally.textContent=commas(BASE); tally.classList.remove('bump');
-    mfill.classList.remove('on'); mv.textContent=commas(RECV_BASE);
-    prog.style.transition='none'; prog.style.width='0'; void prog.offsetWidth; prog.style.transition='';
-  }
-  var TOTAL=16000;
+  function say(t,s){ var c=capT.parentNode; c.classList.add('fade'); later(function(){capT.textContent=t; capS.textContent=s; c.classList.remove('fade');},260); }
+  function reset(){ nodes.forEach(function(n){n.classList.remove('on','done');}); spokes.concat(chords).forEach(function(l){l.classList.remove('on');}); hub.classList.remove('pulse'); }
   function loop(){
-    reset(); var t=200;
-    later(function(){ prog.style.transition='width '+TOTAL+'ms linear'; prog.style.width='100%'; },50);
-    later(function(){ say('Every deal on one board \u2014 leasing and sales.'); },t); t+=1200;
-    later(function(){ move(chips[0],3); },t); t+=1000;
-    later(function(){ say('Mark it closed \u2014 the commission books itself.'); book('a',48200); },t); t+=1500;
-    later(function(){ move(chips[1],2); move(chips[2],1); },t); t+=1300;
-    later(function(){ move(chips[4],2); move(chips[3],1); },t); t+=1300;
-    later(function(){ move(chips[1],3); },t); t+=1000;
-    later(function(){ book('b',112000); },t); t+=1400;
-    later(function(){ say('Overdue payouts get chased \u2014 and land.'); en.over.classList.add('hl'); },t); t+=900;
-    later(function(){ overPill.className='pill mint'; overPill.textContent='Received'; en.over.classList.remove('hl'); mfill.classList.add('on'); count(mv,RECV_BASE,RECV_BASE+16098,900); },t); t+=1400;
-    later(function(){ move(chips[2],2); move(chips[4],3); },t); t+=1200;
-    later(function(){ say('Close. Get paid. See the whole book in one place.'); },t); t+=2400;
-    later(loop, Math.max(t, TOTAL+400));
+    reset(); var t=300;
+    F.forEach(function(f,i){
+      later(function(){
+        nodes.forEach(function(n,k){ n.classList.toggle('on',k===i); if(k<i) n.classList.add('done'); });
+        spokes[i].classList.add('on'); hub.classList.add('pulse'); say(f[0],f[1]);
+        later(function(){hub.classList.remove('pulse');},450);
+      },t); t+=1500;
+    });
+    later(function(){ nodes.forEach(function(n){n.classList.remove('on'); n.classList.add('done');}); say('Everything connected','Tenants link to spaces, spaces to landlords, landlords to deals, deals to commissions \u2014 one continuous, synced system.'); },t); t+=500;
+    chords.forEach(function(c){ later(function(){c.classList.add('on');},t); t+=260; });
+    t+=3600;
+    later(loop,t);
   }
-  function finished(){
-    reset(); chips[0].style.setProperty('--k',3); chips[0].classList.add('closed'); chips[1].style.setProperty('--k',3); chips[1].classList.add('closed'); chips[2].style.setProperty('--k',2); chips[3].style.setProperty('--k',1); chips[4].style.setProperty('--k',3); chips[4].classList.add('closed');
-    en.a.hidden=false; en.b.hidden=false; overPill.className='pill mint'; overPill.textContent='Received'; tally.textContent=commas(BASE+48200+112000); mfill.classList.add('on'); mv.textContent=commas(RECV_BASE+16098); prog.style.width='100%'; cap.textContent='Close. Get paid. See the whole book in one place.';
-  }
+  function finished(){ reset(); nodes.forEach(function(n){n.classList.add('done');}); spokes.concat(chords).forEach(function(l){l.classList.add('on');}); capT.textContent='Everything connected'; capS.textContent='Tenants link to spaces, spaces to landlords, landlords to deals, deals to commissions \u2014 one continuous, synced system.'; }
   if(still.matches || !ANIMATE){ finished(); }
   else if('IntersectionObserver' in window){
     var running=false;
-    new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting&&!running){running=true;loop();} else if(!e.isIntersecting&&running){running=false;timers.forEach(clearTimeout);timers=[];} });},{threshold:.2}).observe($('scene'));
+    new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting&&!running){running=true;loop();} else if(!e.isIntersecting&&running){running=false;timers.forEach(clearTimeout);timers=[];} });},{threshold:.2}).observe(map);
   } else loop();
 })();
 </script>
