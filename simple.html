@@ -76,43 +76,27 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
 .logo.wide{letter-spacing:.32em; font-weight:500; font-size:17px;}
 .logo.serif{font-family:Georgia,'Times New Roman',serif; font-weight:700; letter-spacing:0; font-size:22px;}
 
-/* ---- the one product panel ---- */
-.panel-wrap{margin:44px auto 0; max-width:900px; position:relative; padding-bottom:64px;}
-.scroller{overflow-x:auto; overflow-y:visible; padding:4px; margin:-4px; scrollbar-width:none;}
-.scroller::-webkit-scrollbar{display:none;}
-.board{--gap:11px; --pad:14px; position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:var(--gap); min-width:640px; text-align:left;
-  background:rgba(246,241,230,.05); border:1px solid var(--d-line); border-radius:13px 13px 0 0; border-bottom:0; padding:var(--pad); box-shadow:0 30px 60px -30px rgba(0,0,0,.7);}
-.board-label{position:absolute; top:-10px; left:16px; z-index:4; background:var(--d-bg); padding:0 8px; font-family:'Inter Tight',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--d-ink-3);}
-.col{display:flex; flex-direction:column; gap:8px; min-width:0;}
-.col-head{border-radius:8px; padding:8px 10px; display:flex; flex-direction:column; gap:2px; border:1px solid transparent;}
-.col:nth-child(1) .col-head{background:rgba(205,214,199,.12); border-color:rgba(205,214,199,.19);}
-.col:nth-child(2) .col-head{background:rgba(127,196,169,.13); border-color:rgba(127,196,169,.22);}
-.col:nth-child(3) .col-head{background:rgba(127,196,169,.22); border-color:rgba(127,196,169,.32);}
-.col:nth-child(4) .col-head{background:rgba(127,196,169,.36); border-color:rgba(127,196,169,.5);}
-.col-title{display:flex; align-items:center; justify-content:space-between; gap:6px;}
-.col-title b{font-family:'Inter Tight',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--d-bone); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.pillnum{font-size:10.5px; font-weight:700; color:var(--d-ink); background:var(--d-sage); border-radius:999px; min-width:19px; text-align:center; padding:1px 6px; transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
-.pillnum.bump{transform:scale(1.3);}
-.col-sum{font-size:11.5px; font-weight:600; color:var(--d-mint);}
-.slot{height:0; transition:height .34s cubic-bezier(.4,0,.2,1);}
-.slot.open{height:var(--cardh);}
-.card{background:var(--d-card); border-radius:8px; padding:9px 10px; border:1px solid rgba(28,43,36,.09); box-shadow:0 1px 2px rgba(0,0,0,.18);}
-.card .addr{font-family:'Inter Tight',sans-serif; font-weight:700; font-size:12.5px; color:var(--d-ink); line-height:1.25; letter-spacing:-.012em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.card .who{font-size:11px; color:var(--d-ink-2); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.card .fig{display:flex; flex-wrap:wrap; align-items:center; gap:4px 6px; margin-top:6px; padding-top:6px; border-top:1px solid rgba(28,43,36,.1);}
-.card .rent{font-size:12px; font-weight:700; color:var(--d-green);}
-.card .term{font-size:10.5px; color:var(--d-ink-3);}
-.flyer{position:absolute; z-index:6; top:var(--pad); left:var(--pad); width:var(--col); margin-top:var(--headh); transform:translate3d(calc(var(--stage,0) * var(--step,0px)),0,0); transition:transform .7s cubic-bezier(.62,.02,.3,1), box-shadow .3s;}
-.flyer.lift{box-shadow:0 22px 34px -14px rgba(0,0,0,.66);}
-.signed{margin-left:auto; font-size:9px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:#12261E; background:var(--d-mint); border-radius:999px; padding:2px 7px; opacity:0; transform:scale(.6); transition:opacity .3s, transform .36s cubic-bezier(.34,1.6,.64,1);}
-.flyer.done .signed{opacity:1; transform:scale(1);}
-.chip{position:absolute; z-index:9; right:8px; bottom:14px; display:flex; align-items:center; gap:11px; background:var(--d-card); border-radius:11px; padding:10px 15px 10px 12px; box-shadow:0 20px 40px -16px rgba(0,0,0,.72); opacity:0; transform:translateY(12px) scale(.95); pointer-events:none; transition:opacity .34s, transform .44s cubic-bezier(.34,1.4,.64,1); text-align:left;}
-.chip.show{opacity:1; transform:none;}
-.chip .ic{width:30px; height:30px; border-radius:8px; flex:none; background:rgba(31,107,84,.13); color:var(--d-green); display:grid; place-items:center;}
-.chip b{display:block; font-family:'Inter Tight',sans-serif; font-size:14px; font-weight:800; color:var(--d-ink); letter-spacing:-.015em; line-height:1.2;}
-.chip small{display:block; font-size:11px; color:var(--d-ink-2); margin-top:1px;}
-.fade{position:absolute; left:0; right:0; bottom:0; height:110px; background:linear-gradient(180deg, transparent, var(--d-bg)); pointer-events:none; z-index:7;}
-@media (max-width:560px){ .hero{padding:44px 14px 0;} .chip{right:auto; left:8px;} }
+/* ---- the flow ---- */
+.flow-wrap{margin:40px auto 0; max-width:960px; padding:0 8px 56px;}
+.flow{position:relative; display:grid; grid-template-columns:repeat(6,1fr); gap:8px; text-align:center;}
+.rail{position:absolute; left:calc(100%/12); right:calc(100%/12); top:22px; height:2px; background:rgba(231,226,213,.12); border-radius:2px;}
+.rail .fill{position:absolute; left:0; top:0; height:100%; width:0; background:linear-gradient(90deg,var(--d-green),var(--d-mint)); border-radius:2px; transition:width .9s cubic-bezier(.4,0,.2,1);}
+.rail .dot{position:absolute; top:50%; left:0; width:10px; height:10px; margin:-5px 0 0 -5px; border-radius:50%; background:var(--d-mint); box-shadow:0 0 0 4px rgba(127,196,169,.18), 0 0 18px rgba(127,196,169,.6); transition:left .9s cubic-bezier(.4,0,.2,1), opacity .3s;}
+.step{position:relative; display:flex; flex-direction:column; align-items:center; gap:8px; min-width:0;}
+.step .nd{width:46px; height:46px; border-radius:50%; background:var(--d-bg); border:1.5px solid rgba(231,226,213,.18); display:grid; place-items:center; color:var(--d-ink-3); transition:border-color .4s, color .4s, background .4s, transform .5s cubic-bezier(.34,1.5,.64,1); position:relative; z-index:2;}
+.step .nd svg{width:18px; height:18px;}
+.step b{font-family:'Inter Tight',sans-serif; font-size:12.5px; font-weight:800; letter-spacing:.02em; text-transform:uppercase; color:var(--d-ink-3); transition:color .4s;}
+.step small{font-size:11px; line-height:1.4; color:var(--d-sage); opacity:0; transform:translateY(4px); transition:opacity .4s, transform .4s; max-width:14ch;}
+.step.on .nd{border-color:var(--d-mint); color:var(--d-mint); background:rgba(127,196,169,.1); transform:scale(1.08);}
+.step.on b{color:var(--d-bone);}
+.step.on small{opacity:.9; transform:none;}
+.step.done .nd{transform:none; background:var(--d-mint); color:#12261E; border-color:var(--d-mint);}
+@media (max-width:640px){
+  .flow{grid-template-columns:repeat(3,1fr); row-gap:26px;}
+  .rail{display:none;}
+  .step small{max-width:16ch;}
+}
+@media (max-width:560px){ .hero{padding:44px 14px 0;} }
 @media (prefers-reduced-motion:reduce){ *{animation:none !important; transition:none !important;} }
 </style>
 
@@ -120,7 +104,7 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
   <header class="mast">
     <p class="eyebrow">leasync.ai &middot; homepage hero &middot; option B, the simple one</p>
     <h1>Same words, much less going on under the button.</h1>
-    <p>Two things below the button instead of thirteen: a slow, continuous flow of the brokerages already on Leasync, and one quiet product panel that shows a deal getting signed and the commission appearing. Nothing to click, nothing to read.</p>
+    <p>Two things below the button instead of thirteen: a slow, continuous flow of the brokerages already on Leasync, and one simple animation of the whole Leasync flow &mdash; tenant to space to tour book to LOI to signed to paid. Nothing to click.</p>
   </header>
 
   <section style="border-top:0; padding-top:0">
@@ -131,11 +115,9 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
         <h2 class="h1">Want to grow your business as a <em>commercial real estate broker?</em></h2>
         <p class="sub">The software built for you. Your deals, exclusives, co&#8209;broke splits and what you&rsquo;re owed &mdash; all in one system.</p>
         <a class="btn" href="#signup">I&rsquo;m ready to grow <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <p class="trust">Free plan, no card. Paid plans from $59 &middot; 30-day money back.</p>
 
         <!-- ===== active companies, constant flow ===== -->
         <div class="mq-wrap">
-          <div class="mq-label">Brokerages running on Leasync</div>
           <div class="mq" aria-label="Brokerages running on Leasync">
             <div class="mq-track" id="mqTrack">
               <span class="logo"><span class="mark"><svg viewBox="0 0 16 16" fill="none"><path d="M3 14V6l5-4 5 4v8M6.5 14v-4h3v4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>ARA</span>
@@ -149,28 +131,17 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
           </div>
         </div>
 
-        <!-- ===== one quiet product panel ===== -->
-        <div class="panel-wrap" aria-hidden="true">
-          <div class="scroller">
-            <div class="board" id="board">
-              <span class="board-label">Leasing board</span>
-              <div class="col"><div class="col-head"><div class="col-title"><b>LOI placed</b><span class="pillnum" data-n="0">3</span></div><div class="col-sum" data-s="0">$291.0K</div></div><div class="slot" data-slot="0"></div>
-                <div class="card"><div class="addr">1420 Peachtree St</div><div class="who">Luke&rsquo;s Concierge</div><div class="fig"><span class="rent">$21.4K/mo</span><span class="term">10 yr</span></div></div>
-                <div class="card"><div class="addr">25 Kent Ave #2A</div><div class="who">Summit Health</div><div class="fig"><span class="rent">$32.4K/mo</span><span class="term">5 yr</span></div></div></div>
-              <div class="col"><div class="col-head"><div class="col-title"><b>Final terms</b><span class="pillnum" data-n="1">5</span></div><div class="col-sum" data-s="1">$1.2M</div></div><div class="slot" data-slot="1"></div>
-                <div class="card"><div class="addr">512 5th St</div><div class="who">Brick Coffee</div><div class="fig"><span class="rent">$18.5K/mo</span><span class="term">10 yr</span></div></div>
-                <div class="card"><div class="addr">922 Third Ave</div><div class="who">LPQ USA</div><div class="fig"><span class="rent">$24.8K/mo</span><span class="term">10 yr</span></div></div></div>
-              <div class="col"><div class="col-head"><div class="col-title"><b>Lease out</b><span class="pillnum" data-n="2">3</span></div><div class="col-sum" data-s="2">$55.8K</div></div><div class="slot" data-slot="2"></div>
-                <div class="card"><div class="addr">88 Grand St</div><div class="who">Maru Ramen</div><div class="fig"><span class="rent">$22.0K/mo</span><span class="term">7 yr</span></div></div>
-                <div class="card"><div class="addr">400 Bleecker St</div><div class="who">Outdoor Man</div><div class="fig"><span class="rent">$20.0K/mo</span><span class="term">10 yr</span></div></div></div>
-              <div class="col"><div class="col-head"><div class="col-title"><b>Signed</b><span class="pillnum" data-n="3">8</span></div><div class="col-sum" data-s="3">$3.8M</div></div><div class="slot" data-slot="3"></div>
-                <div class="card"><div class="addr">1413 York Ave</div><div class="who">Pizza Paradise</div><div class="fig"><span class="rent">$7.0K/mo</span><span class="term">7 yr</span></div></div>
-                <div class="card"><div class="addr">213 E 45th St</div><div class="who">Stone Spirits</div><div class="fig"><span class="rent">$12.0K/mo</span><span class="term">10 yr</span></div></div></div>
-              <div class="card flyer" id="flyer"><div class="addr">300 York Ave</div><div class="who">Sweet &amp; Salty Co.</div><div class="fig"><span class="rent">$20,746/mo</span><span class="term">10 yr</span><span class="signed">Signed</span></div></div>
-            </div>
+        <!-- ===== the Leasync flow ===== -->
+        <div class="flow-wrap" aria-hidden="true">
+          <div class="flow" id="flow">
+            <div class="rail"><i class="fill" id="rfill"></i><i class="dot" id="rdot"></i></div>
+            <div class="step" data-step><span class="nd"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="2.6" stroke="currentColor" stroke-width="1.5"/><path d="M3 14c.6-2.6 2.6-4 5-4s4.4 1.4 5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><b>Tenant</b><small>Brick Coffee wants 2,400 SF</small></div>
+            <div class="step" data-step><span class="nd"><svg viewBox="0 0 16 16" fill="none"><path d="M3 14V6l5-4 5 4v8M6.5 14v-4h3v4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><b>Space</b><small>1420 Peachtree, your exclusive</small></div>
+            <div class="step" data-step><span class="nd"><svg viewBox="0 0 16 16" fill="none"><path d="M3 2.5h7l3 3v8H3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M5.5 8h5M5.5 10.5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><b>Tour book</b><small>3 options, generated &amp; sent</small></div>
+            <div class="step" data-step><span class="nd"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5 9.4 6l4.6 1.4L9.4 8.9 8 13.5 6.6 8.9 2 7.4 6.6 6 8 1.5Z" fill="currentColor"/></svg></span><b>LOI</b><small>Drag it in, Lisa fills the deal</small></div>
+            <div class="step" data-step><span class="nd"><svg viewBox="0 0 16 16" fill="none"><path d="M2.5 8.5 6 12l7.5-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Signed</b><small>Moved across the board</small></div>
+            <div class="step" data-step><span class="nd"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.6v12.8M11 4.4H6.6a1.9 1.9 0 0 0 0 3.8h2.8a1.9 1.9 0 0 1 0 3.8H4.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>Paid</b><small>$48,200 &middot; 50/50 split tracked</small></div>
           </div>
-          <div class="chip" id="chip"><span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.6v12.8M11 4.4H6.6a1.9 1.9 0 0 0 0 3.8h2.8a1.9 1.9 0 0 1 0 3.8H4.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>$48,200 commission created</b><small>50/50 co&#8209;broke split &middot; auto-calculated</small></span></div>
-          <div class="fade"></div>
         </div>
       </div>
     </div>
@@ -182,9 +153,9 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
       <p>Two elements, both quiet. Compare with option A (the thirteen previews) at <a href="https://aaraziz.github.io/leasync-hero-preview/">aaraziz.github.io/leasync-hero-preview</a>.</p>
     </div>
     <div class="notes">
-      <div class="note"><h4>1. Active companies, constant flow</h4><p>A logo marquee: one row, scrolling right-to-left at about 38 seconds per lap, seamless, faded at both edges, pauses on hover. Pure CSS &mdash; the row is duplicated once and translated by &minus;50%. Wordmarks here are placeholders in type; the site already has the real logos (ARA, Tahari Realty, PrestonBend, Vantage and the others in today&rsquo;s trust bar) &mdash; drop those SVG/PNGs in as <code>&lt;img&gt;</code> and delete the text.</p></div>
-      <div class="note"><h4>2. One product panel</h4><p>The leasing board, cropped and fading into the page like today&rsquo;s pipeline card. Every ~9 seconds one deal glides LOI &rarr; Signed and the commission chip appears, then it resets softly. No tabs, no cursor, no clicking. Set <code>ANIMATE = false</code> in the script and it&rsquo;s a still image.</p></div>
-      <div class="note"><h4>Kept from before</h4><ul><li>Pill, headline (mint second line), sub-line, one button, trust line &mdash; identical to option A.</li><li>Inter / Inter Tight only, brand tokens only, no red or orange.</li><li>Reduced-motion: marquee and board stand still.</li><li>Board scrolls sideways inside its own box on phones; page never scrolls sideways.</li></ul></div>
+      <div class="note"><h4>1. Active companies, constant flow</h4><p>A logo marquee with no label above it: one row, scrolling right-to-left at about 38 seconds per lap, seamless, faded at both edges, pauses on hover. Pure CSS &mdash; the row is duplicated once and translated by &minus;50%. Wordmarks here are placeholders in type; the site already has the real logos (ARA, Tahari Realty, PrestonBend, Vantage and the others in today&rsquo;s trust bar) &mdash; drop those SVG/PNGs in as <code>&lt;img&gt;</code> and delete the text.</p></div>
+      <div class="note"><h4>2. The Leasync flow</h4><p>Six steps on one rail &mdash; Tenant, Space, Tour book, LOI, Signed, Paid. A mint dot travels the rail; each step lights as it arrives and shows one line of what Leasync does there. About twelve seconds, then it loops. On phones the rail hides and the six steps sit in a 3&times;2 grid. Set <code>ANIMATE = false</code> and it renders finished and still.</p></div>
+      <div class="note"><h4>Kept from before</h4><ul><li>Pill, headline (mint second line), sub-line, one button. The small-print trust line is gone.</li><li>Inter / Inter Tight only, brand tokens only, no red or orange.</li><li>Reduced-motion: marquee and flow stand still.</li><li>Nothing forces the page wider than a phone.</li></ul></div>
       <div class="note"><h4>What&rsquo;s gone</h4><ul><li>The &ldquo;Preview our features below&rdquo; label and all thirteen previews.</li><li>Lisa, the inbox, tour books, marketplace &mdash; those move to feature sections lower on the page if you want them at all.</li></ul></div>
     </div>
   </section>
@@ -199,40 +170,26 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
   // duplicate the row once so the -50% translate loops seamlessly
   track.innerHTML += track.innerHTML;
 
-  var board=document.getElementById('board'), flyer=document.getElementById('flyer'), chip=document.getElementById('chip');
-  var slots=[].slice.call(board.querySelectorAll('[data-slot]')), nums=[].slice.call(board.querySelectorAll('[data-n]')), sums=[].slice.call(board.querySelectorAll('[data-s]'));
-  var BASE_N=[3,5,3,8], BASE_D=[291000,1200000,55800,3800000], COMM=48200, stage=0, timers=[];
-  var still=window.matchMedia('(prefers-reduced-motion: reduce)');
-  function money(v){return v>=1e6?'$'+(v/1e6).toFixed(1)+'M':'$'+(v/1e3).toFixed(1)+'K';}
+  var steps=[].slice.call(document.querySelectorAll('[data-step]')), fill=document.getElementById('rfill'), dot=document.getElementById('rdot');
+  var timers=[], still=window.matchMedia('(prefers-reduced-motion: reduce)');
   function later(fn,ms){timers.push(setTimeout(fn,ms));}
-  function measure(){
-    var head=board.querySelector('.col-head'), col=board.querySelector('.col'), gap=parseFloat(getComputedStyle(board).columnGap)||0;
-    board.style.setProperty('--headh',(head.offsetHeight+8)+'px');
-    board.style.setProperty('--cardh',(flyer.offsetHeight+8)+'px');
-    board.style.setProperty('--col',col.getBoundingClientRect().width+'px');
-    board.style.setProperty('--step',(col.getBoundingClientRect().width+gap)+'px');   // % in transform = own box, so measure
-  }
-  function paint(){
-    for(var i=0;i<4;i++){var mine=i===stage?1:0, want=String(BASE_N[i]+mine);
-      if(nums[i].textContent!==want){nums[i].textContent=want; nums[i].classList.add('bump'); (function(el){later(function(){el.classList.remove('bump');},320);})(nums[i]);}
-      sums[i].textContent=money(BASE_D[i]+mine*COMM); slots[i].classList.toggle('open',i===stage);}
-    board.style.setProperty('--stage',stage);
-  }
-  function reset(){ flyer.style.transition='none'; flyer.classList.remove('lift','done'); chip.classList.remove('show'); stage=0; measure(); paint(); void flyer.offsetWidth; flyer.style.transition=''; }
+  function setPos(i){ var pct=i/(steps.length-1)*100; fill.style.width=pct+'%'; dot.style.left=pct+'%'; }
+  function reset(){ steps.forEach(function(s){s.classList.remove('on','done');}); fill.style.transition='none'; dot.style.transition='none'; setPos(0); dot.style.opacity='1'; void fill.offsetWidth; fill.style.transition=''; dot.style.transition=''; }
   function loop(){
     reset();
-    var t=1800;
-    for(var k=0;k<3;k++){ later(function(){flyer.classList.add('lift');},t); t+=250; later(function(){stage++;paint();},t); t+=800; later(function(){flyer.classList.remove('lift');},t); t+=1000; }
-    later(function(){flyer.classList.add('done');},t); t+=500;
-    later(function(){chip.classList.add('show');},t); t+=3600;
+    var t=400;
+    steps.forEach(function(s,i){
+      later(function(){ setPos(i); steps.forEach(function(o,k){ o.classList.toggle('done', k<i); o.classList.toggle('on', k===i); }); }, t);
+      t += (i===steps.length-1) ? 2600 : 1500;
+    });
+    later(function(){ steps.forEach(function(o){o.classList.add('done');}); dot.style.opacity='0'; }, t); t+=1400;
     later(loop,t);
   }
-  if(still.matches || !ANIMATE){ stage=3; measure(); paint(); flyer.classList.add('done'); chip.classList.add('show'); }
+  if(still.matches || !ANIMATE){ setPos(steps.length-1); steps.forEach(function(s,i){ s.classList.add(i===steps.length-1?'on':'done'); }); }
   else if('IntersectionObserver' in window){
     var running=false;
-    new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting&&!running){running=true;loop();} else if(!e.isIntersecting&&running){running=false;timers.forEach(clearTimeout);timers=[];} });},{threshold:.2}).observe(board);
+    new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting&&!running){running=true;loop();} else if(!e.isIntersecting&&running){running=false;timers.forEach(clearTimeout);timers=[];} });},{threshold:.2}).observe(document.getElementById('flow'));
   } else loop();
-  window.addEventListener('resize',measure);
 })();
 </script>
 
