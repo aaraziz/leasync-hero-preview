@@ -78,56 +78,32 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
 .logo.wide{letter-spacing:.32em; font-weight:500; font-size:14px;}
 .logo.serif{font-family:Georgia,'Times New Roman',serif; font-weight:700; letter-spacing:0; font-size:19px;}
 
-/* ---- the orbit ---- */
-.orbit-wrap{margin:8px auto 0; max-width:1040px; padding:0 0 16px; text-align:left;}
-.orbit{position:relative; height:280px; perspective:1100px; perspective-origin:50% 40%;}
-.hub{position:absolute; left:50%; top:20px; transform:translateX(-50%); display:inline-flex; align-items:center; gap:8px; padding:6px 12px 6px 7px; border-radius:999px; background:rgba(246,241,230,.06); border:1px solid var(--d-line); color:var(--d-bone); z-index:1;}
-.hub .hub-mark{width:22px; height:22px; border-radius:50%; background:var(--d-mint); color:#12261E; display:grid; place-items:center;}
-.hub .hub-mark svg{width:12px; height:12px;}
-.hub b{font-family:'Inter Tight',sans-serif; font-size:13px; font-weight:800; letter-spacing:-.01em;}
-.hub small{font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--d-ink-3); font-weight:700;}
-.ring{position:absolute; left:50%; top:45%; width:0; height:0; transform-style:preserve-3d; transform:rotateX(-6deg) rotateY(0deg); z-index:2;}
-.fc{position:absolute; left:-80px; top:-68px; width:160px; height:136px; box-sizing:border-box; padding:9px 10px; border-radius:11px; background:var(--d-card); color:var(--d-ink); box-shadow:0 18px 40px -18px rgba(0,0,0,.75); backface-visibility:hidden; -webkit-backface-visibility:hidden; transform:rotateY(var(--a)) translateZ(var(--R,318px)); transition:opacity .35s, filter .35s; text-align:left; overflow:hidden;}
-.fc-h{display:flex; align-items:center; gap:6px; font-family:'Inter Tight',sans-serif; font-size:11.5px; font-weight:800; letter-spacing:-.01em; margin-bottom:7px; padding-bottom:6px; border-bottom:1px solid rgba(28,43,36,.1);}
-.fc-h i{width:18px; height:18px; border-radius:50%; background:rgba(31,107,84,.12); color:var(--d-green); display:grid; place-items:center; flex:none;}
-.fc-h i svg{width:11px; height:11px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linejoin:round; stroke-linecap:round;}
-/* fragments */
-.kp{display:grid; grid-template-columns:1.1fr 1.1fr .9fr; gap:4px;}
-.kp span{display:flex; flex-direction:column; gap:1px;} .kp small{font-size:7.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--d-ink-3); font-weight:700; white-space:nowrap;} .kp b{font-family:'Inter Tight',sans-serif; font-size:13px; font-weight:800; letter-spacing:-.03em;}
-.spark{display:block; width:100%; height:34px; margin-top:8px;} .spark .ln{fill:none; stroke:var(--d-green); stroke-width:1.6; stroke-dasharray:1; stroke-dashoffset:1; vector-effect:non-scaling-stroke;} .spark .ar{fill:rgba(31,107,84,.14); opacity:0;}
-.rows{display:flex; flex-direction:column; gap:4px;}
-.r{display:flex; align-items:center; justify-content:space-between; gap:6px; font-size:9px; color:var(--d-ink-2); padding:3px 6px; border-radius:5px; background:rgba(28,43,36,.05); white-space:nowrap; overflow:hidden;}
-.r b{font-family:'Inter Tight',sans-serif; font-weight:800; color:var(--d-ink); font-size:10px;}
-.r .chk{width:9px; height:9px; border-radius:50%; border:1.2px solid rgba(28,43,36,.35); flex:none; margin-right:5px;}
-.r.hl{background:rgba(127,196,169,.25);} .r .tag{font-size:7.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; background:var(--d-green); color:var(--d-card); border-radius:999px; padding:1px 5px; margin-right:5px; flex:none;}
-.rp{font-size:7.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; border-radius:999px; padding:1.5px 6px; flex:none;} .rp.l{background:rgba(31,107,84,.14); color:var(--d-green);} .rp.t{background:var(--d-green); color:var(--d-card);} .rp.b{background:rgba(28,43,36,.1); color:var(--d-ink);}
-.r.pill-r{background:var(--d-green); color:var(--d-card); justify-content:center; font-weight:700;}
-.mail{display:flex; align-items:center; gap:7px;} .mail .av{width:22px; height:22px; border-radius:50%; background:var(--d-green); color:var(--d-card); display:grid; place-items:center; font-family:'Inter Tight',sans-serif; font-weight:800; font-size:8.5px; flex:none;} .mail b{display:block; font-family:'Inter Tight',sans-serif; font-size:10.5px; font-weight:800; line-height:1.15;} .mail small{display:block; font-size:8.5px; color:var(--d-ink-3); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:118px;}
-.sum{display:flex; flex-direction:column; gap:3px; margin-top:7px; font-size:9px; color:var(--d-ink-2);} .sum em{font-style:normal; display:flex; align-items:center;} .sum b{font-weight:800; color:var(--d-ink); margin-left:3px;}
-.pill{font-size:7.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; background:var(--d-green); color:var(--d-card); border-radius:999px; padding:2px 7px; display:inline-block; font-style:normal;} .pill.s{background:rgba(28,43,36,.1); color:var(--d-ink);}
-.chat{display:flex; flex-direction:column; gap:6px;} .chat .q{align-self:flex-end; background:var(--d-ink); color:var(--d-card); font-size:9px; border-radius:9px 9px 2px 9px; padding:5px 8px; max-width:88%;} .chat .ans{align-self:flex-start; background:rgba(28,43,36,.06); font-size:9.5px; border-radius:9px 9px 9px 2px; padding:5px 8px; color:var(--d-ink-2);} .chat .ans b{color:var(--d-ink); font-family:'Inter Tight',sans-serif; font-weight:800;}
-.tn b{display:block; font-family:'Inter Tight',sans-serif; font-size:12px; font-weight:800; letter-spacing:-.015em; line-height:1.15;} .tn small{display:block; font-size:8.5px; color:var(--d-ink-3); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.stages{display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-top:8px;} .stages span{font-size:7.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; text-align:center; color:var(--d-ink-3); padding-top:6px; border-top:3px solid rgba(28,43,36,.1); transition:border-color .3s, color .3s;} .stages span.on{border-color:var(--d-green); color:var(--d-ink);}
-.book{position:relative; height:84px;} .book .pg{position:absolute; left:50%; top:4px; width:54px; height:70px; margin-left:-27px; border-radius:4px; background:#fff; border:1px solid rgba(28,43,36,.12); box-shadow:0 6px 12px -6px rgba(0,0,0,.4);} .book .pg.a1{transform:translate(-22px,4px) rotate(-8deg);} .book .pg.a2{transform:translate(22px,2px) rotate(7deg);} .book .pg.cv{background:var(--d-ink); color:var(--d-card); padding:7px 6px;} .book .cv b{display:block; font-family:'Inter Tight',sans-serif; font-size:9px; font-weight:800; line-height:1.15;} .book .cv small{font-size:7.5px; color:var(--d-sage);}
-.kb{display:grid; grid-template-columns:repeat(4,1fr); gap:5px; height:56px;} .kb span{display:flex; flex-direction:column; gap:4px; border-radius:5px; background:rgba(28,43,36,.05); padding:4px;} .kb i{display:block; height:12px; border-radius:3px; background:#fff; border:1px solid rgba(28,43,36,.12);} .kb .last{background:rgba(31,107,84,.12);} .kb .mv{background:var(--d-green); border-color:var(--d-green);}
-.pillrow{display:flex; align-items:center; gap:6px; margin-top:8px;} .pillrow small{font-size:8.5px; color:var(--d-ink-3); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.amt{font-family:'Inter Tight',sans-serif; font-size:20px; font-weight:800; letter-spacing:-.03em; line-height:1;} .bars{display:flex; flex-direction:column; gap:5px; margin-top:7px;} .bars span{display:flex; flex-direction:column; gap:2px;} .bars small{font-size:8px; color:var(--d-ink-3);} .bars i{display:block; height:5px; border-radius:3px; background:rgba(28,43,36,.08); overflow:hidden;} .bars em{display:block; height:100%; width:0; background:var(--d-green); transition:width .8s cubic-bezier(.3,.9,.3,1);}
-.tog{width:22px; height:12px; border-radius:999px; background:rgba(28,43,36,.15); position:relative; flex:none;} .tog::after{content:""; position:absolute; top:2px; left:2px; width:8px; height:8px; border-radius:50%; background:#fff; transition:transform .3s;} .tog.on{background:var(--d-green);} .tog.on::after{transform:translateX(10px);}
-.sw{display:inline-flex; gap:3px;} .sw i{width:10px; height:10px; border-radius:50%; border:1px solid rgba(28,43,36,.15); display:block;}
-/* front-card micro animation */
-.fc .a1,.fc .a2,.fc .a3{opacity:.55; transform:translateY(3px); transition:opacity .35s, transform .35s;}
-.fc.front .a1,.fc.front .a2,.fc.front .a3{opacity:1; transform:none;}
-.fc.front .a2{transition-delay:.15s;} .fc.front .a3{transition-delay:.3s;}
-.fc.front .spark .ln{animation:draw 1.1s cubic-bezier(.4,0,.2,1) forwards;} .fc.front .spark .ar{animation:fadein .6s .7s forwards;}
-@keyframes draw{to{stroke-dashoffset:0;}} @keyframes fadein{to{opacity:1;}}
-.fc.front .bars em{width:100%;}
-.fc.front .stages .a3{border-color:var(--d-green); color:var(--d-ink); transition-delay:.4s;}
-.orbit-cap{text-align:center; margin:6px auto 0; position:relative; z-index:5; max-width:66ch; min-height:2.4em; transition:opacity .25s;}
-.orbit-cap.fade{opacity:0;}
-.orbit-cap b{font-family:'Inter Tight',sans-serif; font-size:13px; font-weight:800; color:var(--d-bone); margin-right:8px;}
-.orbit-cap span{font-size:12px; color:var(--d-sage); line-height:1.45;}
-@media (max-width:820px){ .fc{--R:270px;} .orbit{perspective:900px;} }
-@media (max-width:560px){ .orbit{height:262px;} .fc{--R:230px; width:150px; height:132px; left:-75px; top:-66px;} .hub{top:8px;} }
+/* ---- close more deals · make more money ---- */
+.win-wrap{margin:26px auto 0; max-width:900px; padding:0 0 18px; text-align:left;}
+.win{display:grid; grid-template-columns:1fr 1px 1fr; gap:26px; padding:22px 26px 20px; background:rgba(246,241,230,.045); border:1px solid var(--d-line); border-radius:14px; box-shadow:0 30px 60px -30px rgba(0,0,0,.7);}
+.wdiv{background:var(--d-line);}
+.wcol{min-width:0; display:flex; flex-direction:column;}
+.wh{font-family:'Inter Tight',sans-serif; font-size:clamp(18px,2.2vw,24px); font-weight:800; letter-spacing:-.025em; color:var(--d-bone); line-height:1.1;}
+.wnum{font-family:'Inter Tight',sans-serif; font-size:clamp(40px,5.2vw,58px); font-weight:800; letter-spacing:-.04em; color:var(--d-bone); line-height:1; margin-top:8px; transition:color .3s;}
+.wnum.mint{color:var(--d-mint);}
+.wnum.bump{color:var(--d-mint);}
+.wsub{font-size:11.5px; color:var(--d-ink-3); margin-top:6px; letter-spacing:.02em;}
+.wtrack{display:grid; grid-template-columns:1fr 24px 1fr; gap:10px; align-items:end; margin-top:14px;}
+.wlane{display:flex; flex-direction:column; gap:6px; min-width:0;}
+.wl{font-size:9px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--d-ink-3);}
+.wlane.done .wl{color:var(--d-mint);}
+.wstack{position:relative; height:74px;}
+.wcard{position:absolute; left:0; right:0; background:var(--d-card); color:var(--d-ink); border-radius:7px; padding:6px 9px; font-family:'Inter Tight',sans-serif; font-size:11px; font-weight:800; letter-spacing:-.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; box-shadow:0 8px 18px -8px rgba(0,0,0,.6); transition:transform .55s cubic-bezier(.62,.02,.3,1), opacity .35s, background .3s, color .3s;}
+.wcard small{font-weight:600; color:var(--d-ink-2); margin-left:6px; font-size:9.5px;}
+.wcard.closed{background:var(--d-mint); color:#12261E;} .wcard.closed small{color:#12261E; opacity:.7;}
+.warrow{width:24px; height:16px; color:var(--d-ink-3); margin-bottom:26px;}
+.wbars{display:flex; flex-direction:column; gap:9px; margin-top:16px;}
+.wb{display:grid; grid-template-columns:70px 1fr auto; align-items:center; gap:10px; font-size:11px; color:var(--d-sage);}
+.wb i{display:block; height:7px; border-radius:4px; background:rgba(231,226,213,.1); overflow:hidden;}
+.wb em{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--d-green),var(--d-mint)); transition:width .7s cubic-bezier(.3,.9,.3,1);}
+.wb b{font-family:'Inter Tight',sans-serif; font-weight:800; color:var(--d-bone); font-size:12px; min-width:64px; text-align:right;}
+.wcap{text-align:center; margin:12px auto 0; font-size:12.5px; color:var(--d-sage); opacity:.9;}
+@media (max-width:700px){ .win{grid-template-columns:1fr; gap:18px;} .wdiv{height:1px;} }
 @media (max-width:560px){ .hero{padding:44px 14px 0;} }
 @media (prefers-reduced-motion:reduce){ *{animation:none !important; transition:none !important;} }
 </style>
@@ -136,7 +112,7 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
   <header class="mast">
     <p class="eyebrow">leasync.ai &middot; homepage hero &middot; option B, the simple one</p>
     <h1>Same words, much less going on under the button.</h1>
-    <p>The hero now carries Aaron&rsquo;s volume line under the sub-line (&ldquo;trusted with over $120B in deal volume&rdquo;) &mdash; a figure to stand behind on a sales call. Two things below the button instead of thirteen: a slow, continuous flow of the brokerages already on Leasync, and one continuous animation: the twelve features orbiting one Leasync hub, each a small piece of the real screen. Nothing to click.</p>
+    <p>The hero now carries Aaron&rsquo;s volume line under the sub-line (&ldquo;trusted with over $120B in deal volume&rdquo;) &mdash; a figure to stand behind on a sales call. Two things below the button instead of thirteen: a slow, continuous flow of the brokerages already on Leasync, and one very simple animation: close more deals on the left, make more money on the right, both counting up as deals slide into Closed. Nothing to click.</p>
   </header>
 
   <section style="border-top:0; padding-top:0">
@@ -164,82 +140,31 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
           </div>
         </div>
 
-        <!-- ===== the orbit: twelve features around one system ===== -->
-        <div class="orbit-wrap" aria-hidden="true">
-          <div class="orbit" id="orbit">
-            <div class="hub"><span class="hub-mark"><svg viewBox="0 0 16 16" fill="none"><path d="M3 14V6l5-4 5 4v8M6.5 14v-4h3v4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><b>Leasync</b><small>one system</small></div>
-            <div class="ring" id="ring">
-
-              <div class="fc" data-fc="Dashboard" data-line="Your numbers at a glance &mdash; solo, or the whole organization.">
-                <div class="fc-h"><i><svg viewBox="0 0 16 16"><path d="M2 13h12M4 13V8M8 13V4M12 13V6"/></svg></i>Dashboard</div>
-                <div class="kp"><span><small>In progress</small><b>14</b></span><span><small>Closed YTD</small><b>9</b></span><span><small>Owed</small><b>$86K</b></span></div>
-                <svg class="spark" viewBox="0 0 100 26" preserveAspectRatio="none"><path class="ln" d="M0 22 C15 21 20 17 30 15 S48 12 58 9 S80 6 100 3"/><path class="ar" d="M0 22 C15 21 20 17 30 15 S48 12 58 9 S80 6 100 3 V26 H0 Z"/></svg>
+        <!-- ===== close more deals · make more money ===== -->
+        <div class="win-wrap" aria-hidden="true">
+          <div class="win">
+            <div class="wcol">
+              <div class="wh">Close more deals</div>
+              <div class="wnum" id="wDeals">0</div>
+              <div class="wsub">deals closed this year</div>
+              <div class="wtrack">
+                <div class="wlane"><span class="wl">In progress</span><div class="wstack" id="wStack"></div></div>
+                <svg class="warrow" viewBox="0 0 24 16" fill="none"><path d="M2 8h18M14 3l6 5-6 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="wlane done"><span class="wl">Closed</span><div class="wstack" id="wDone"></div></div>
               </div>
-
-              <div class="fc" data-fc="AI Agenda" data-line="Hit sync and Lisa builds your agenda. A teammate tags you, it lands right here.">
-                <div class="fc-h"><i><svg viewBox="0 0 16 16"><path d="M8 1.5 9.4 6l4.6 1.4L9.4 8.9 8 13.5 6.6 8.9 2 7.4 6.6 6 8 1.5Z"/></svg></i>AI Agenda</div>
-                <div class="rows"><span class="r a1"><em class="chk"></em>Chase $6,025 &middot; 300 York</span><span class="r a2"><em class="chk"></em>Reply to Dana Park</span><span class="r a3 hl"><em class="tag">@you</em>Mason tagged you</span></div>
+            </div>
+            <div class="wdiv"></div>
+            <div class="wcol">
+              <div class="wh">Make more money</div>
+              <div class="wnum mint" id="wMoney">$0</div>
+              <div class="wsub">commission booked this year</div>
+              <div class="wbars">
+                <div class="wb"><span>Received</span><i><em id="wB1"></em></i><b id="wV1">$0</b></div>
+                <div class="wb"><span>Still owed</span><i><em id="wB2"></em></i><b id="wV2">$0</b></div>
               </div>
-
-              <div class="fc" data-fc="Built-in Email" data-line="Gmail and Outlook inside Leasync. Lisa summarizes, pulls the contact, files it in one click.">
-                <div class="fc-h"><i><svg viewBox="0 0 16 16"><path d="M2 4.5 8 9l6-4.5M2.5 3.5h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Z"/></svg></i>Built-in Email</div>
-                <div class="mail"><span class="av">DP</span><span><b>Dana Park</b><small>Re: 1420 Peachtree &mdash; counter</small></span></div>
-                <div class="sum"><em class="a1">Counter: <b>$46/SF</b></em><em class="a2">LOI due <b>Friday</b></em><em class="a3 pill">Filed &middot; 1 click</em></div>
-              </div>
-
-              <div class="fc" data-fc="Ask Lisa" data-line="&ldquo;How many deals did I close this month?&rdquo; Real data, instantly.">
-                <div class="fc-h"><i><svg viewBox="0 0 16 16"><path d="M3 3h10v7H7l-3 3v-3H3z"/></svg></i>Ask Lisa</div>
-                <div class="chat"><span class="q a1">How many deals did I close this month?</span><span class="ans a2"><b>3 deals</b> &middot; $91,500 booked</span></div>
-              </div>
-
-              <div class="fc" data-fc="Contacts" data-line="Synced from your inbox and sorted &mdash; broker, landlord, tenant &mdash; so the database builds itself.">
-                <div class="fc-h"><i><svg viewBox="0 0 16 16"><path d="M8 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM3 14c.6-2.6 2.6-4 5-4s4.4 1.4 5 4"/></svg></i>Contacts</div>
-                <div class="rows"><span class="r a1">Dana Park<em class="rp l">Landlord</em></span><span class="r a2">Josh Reyes<em class="rp t">Tenant</em></span><span class="r a3">Hannah Ruiz<em class="rp b">Broker</em></span></div>
-              </div>
-
-              <div class="fc" data-fc="Tenants" data-line="Contacts, requirements and every active deal in one view. Tag a teammate; it lands in their agenda.">
-                <div class="fc-h"><i><svg viewBox="0 0 16 16"><path d="M3 14V6l5-4 5 4v8M6.5 14v-4h3v4"/></svg></i>Tenants</div>
-                <div class="tn"><b>Brick Coffee</b><small>2,000&ndash;3,000 SF &middot; corner &middot; vented</small></div>
-                <div class="stages"><span class="a1 on">LOI</span><span class="a2 on">Terms</span><span class="a3">Lease</span><span>Signed</span></div>
-              </div>
-
-              <div class="fc" data-fc="Tour Books" data-line="Pick any spaces and get a polished tour book, ready to send.">
-                <div class="fc-h"><i><svg viewBox="0 0 16 16"><path d="M3 2.5h7l3 3v8H3zM5.5 8h5M5.5 10.5h5"/></svg></i>Tour Books</div>
-                <div class="book"><span class="pg a1"></span><span class="pg a2"></span><span class="pg cv a3"><b>Brick Coffee</b><small>3 options</small></span></div>
-              </div>
-
-              <div class="fc" data-fc="Spaces" data-line="Work listings toward exclusives. Smart Match connects the right tenants; one click emails them all.">
-                <div class="fc-h"><i><svg viewBox="0 0 16 16"><path d="M2 13h12M4 13V5l4-3 4 3v8M6.5 13v-3h3v3"/></svg></i>Spaces</div>
-                <div class="tn"><b>1420 Peachtree St</b><small>Your exclusive &middot; 2,400 SF</small></div>
-                <div class="rows"><span class="r a1">Brick Coffee<em class="rp t">96%</em></span><span class="r a2">Maru Ramen<em class="rp t">91%</em></span><span class="r a3 pill-r">Smart Match &middot; email all</span></div>
-              </div>
-
-              <div class="fc" data-fc="Deals" data-line="List or board, leasing or sales. Drag in an LOI and Lisa fills the whole deal. Mark it signed.">
-                <div class="fc-h"><i><svg viewBox="0 0 16 16"><path d="M2 4h12v9H2zM2 7h12M5 4V2M11 4V2"/></svg></i>Deals</div>
-                <div class="kb"><span><i></i><i></i></span><span><i></i></span><span><i></i><i></i></span><span class="last"><i class="mv a1"></i></span></div>
-                <div class="pillrow"><em class="pill a2">Signed</em><small>300 York Ave &middot; $20,746/mo</small></div>
-              </div>
-
-              <div class="fc" data-fc="Commissions" data-line="Every commission tracked &mdash; split, each share, schedule, installments, overdue to paid.">
-                <div class="fc-h"><i><svg viewBox="0 0 16 16"><path d="M8 1.6v12.8M11 4.4H6.6a1.9 1.9 0 0 0 0 3.8h2.8a1.9 1.9 0 0 1 0 3.8H4.6"/></svg></i>Commissions</div>
-                <div class="amt">$48,200</div>
-                <div class="bars"><span class="a1"><small>You &middot; 50%</small><i><em></em></i></span><span class="a2"><small>Co&#8209;broke &middot; 50%</small><i><em></em></i></span></div>
-                <div class="pillrow a3"><em class="pill">$12,050 received</em><em class="pill s">2 due</em></div>
-              </div>
-
-              <div class="fc" data-fc="Settings &amp; Control" data-line="Themes, rates, regions, permissions. An analytics profile for every agent. Import in one step.">
-                <div class="fc-h"><i><svg viewBox="0 0 16 16"><path d="M8 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M3.4 12.6l1.4-1.4M11.2 4.8l1.4-1.4"/></svg></i>Settings &amp; Control</div>
-                <div class="rows"><span class="r a1">Team sees commissions<em class="tog on"></em></span><span class="r a2">Default rate<b>4%</b></span><span class="r a3">Theme<em class="sw"><i style="background:#16211C"></i><i style="background:#E7E2D5"></i><i style="background:#2C3A33"></i></em></span></div>
-              </div>
-
-              <div class="fc" data-fc="Marketplace" data-line="A private network where Leasync brokers share listings, new spaces added by the minute.">
-                <div class="fc-h"><i><svg viewBox="0 0 16 16"><path d="M2 6l1-3h10l1 3M2 6h12v7H2zM6 13V9h4v4"/></svg></i>Marketplace</div>
-                <div class="rows"><span class="r a1">2201 W Loop, Houston<em class="rp t">New</em></span><span class="r a2">1425 K St, DC<em class="rp t">New</em></span><span class="r a3">400 N Michigan<b>$95/SF</b></span></div>
-              </div>
-
             </div>
           </div>
-          <div class="orbit-cap" id="ocap"><b id="capT">Dashboard</b><span id="capS">Your numbers at a glance &mdash; solo, or the whole organization.</span></div>
+          <p class="wcap">Every deal on one board. Every commission booked the moment you mark it signed.</p>
         </div>
       </div>
     </div>
@@ -252,7 +177,7 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
     </div>
     <div class="notes">
       <div class="note"><h4>1. Active companies, constant flow</h4><p>A logo marquee with no label above it: one row, scrolling right-to-left at about 38 seconds per lap, seamless, faded at both edges, pauses on hover. Pure CSS &mdash; the row is duplicated once and translated by &minus;50%. Wordmarks here are placeholders in type; the site already has the real logos (ARA, Tahari Realty, PrestonBend, Vantage and the others in today&rsquo;s trust bar) &mdash; drop those SVG/PNGs in as <code>&lt;img&gt;</code> and delete the text.</p></div>
-      <div class="note"><h4>2. The orbit</h4><p>Twelve feature cards on a slowly turning 3D ring around a &ldquo;Leasync &middot; one system&rdquo; hub. Each card holds a small real fragment of that screen &mdash; dashboard tiles and a trend line, the agenda list, an email with Lisa&rsquo;s summary, a chat answer, sorted contacts, a tenant with stage bars, a tour book, Smart Match scores, the deal board, the commission split, settings toggles, marketplace listings. The card at the front is sharp and its fragment animates (bars fill, line draws, pills pop); cards to the sides fade back; cards behind vanish. The caption names the front feature with its one-liner from your list. Continuous motion, 2.6 s per feature, ~31 s per lap. Fits one screen at 1280&times;800 with the nav.</p></div>
+      <div class="note"><h4>2. Close more deals &middot; make more money</h4><p>One panel, two halves, no reading required. <b>Left:</b> &ldquo;Close more deals&rdquo; over a big count of deals closed this year; below it a small stack of in-progress deals (leasing and sales) and every 1.7 seconds one slides across into Closed, turns mint, and the count ticks up. <b>Right:</b> &ldquo;Make more money&rdquo; over the commission total, which jumps with each close, plus received / still-owed bars. Four closes, a pause, soft reset. About 11 seconds a loop. Fits one screen at 1280&times;800 with the nav.</p><p><b>Wording note, once:</b> &ldquo;Close more deals&rdquo; and &ldquo;make more money&rdquo; are Aaron&rsquo;s chosen lines. They read as outcome claims; there is no customer data behind them yet, so be ready for a broker to ask &ldquo;more than what?&rdquo; on a call. The numbers in the panel are demo figures, not measured results.</p></div>
       <div class="note"><h4>Kept from before</h4><ul><li>Pill, headline (mint second line), sub-line, one button. The small-print trust line is gone.</li><li>Inter / Inter Tight only, brand tokens only, no red or orange.</li><li>Reduced-motion: marquee and flow stand still.</li><li>Nothing forces the page wider than a phone.</li></ul></div>
       <div class="note"><h4>What&rsquo;s gone</h4><ul><li>The &ldquo;Preview our features below&rdquo; label and all thirteen previews.</li><li>Lisa, the inbox, tour books, marketplace &mdash; those move to feature sections lower on the page if you want them at all.</li></ul></div>
     </div>
@@ -269,41 +194,42 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
   track.innerHTML += track.innerHTML;
 
   var $=function(id){return document.getElementById(id);};
-  var ring=$('ring'), cards=[].slice.call(ring.querySelectorAll('.fc')), capT=$('capT'), capS=$('capS'), ocap=$('ocap');
-  var N=cards.length, STEP=360/N, PERIOD=N*2600;      // 2.6s per feature at the front, ~31s per lap
-  cards.forEach(function(c,i){ c.style.setProperty('--a', (i*STEP)+'deg'); });
-  var still=window.matchMedia('(prefers-reduced-motion: reduce)');
-  var t0=null, front=-1, raf=null, running=false, paused=0, pauseAt=0;
-  function setFront(i){
-    if(i===front) return; front=i;
-    cards.forEach(function(c,k){ c.classList.toggle('front',k===i); });
-    ocap.classList.add('fade');
-    setTimeout(function(){ capT.innerHTML=cards[i].getAttribute('data-fc'); capS.innerHTML=cards[i].getAttribute('data-line'); ocap.classList.remove('fade'); },220);
+  var dealsEl=$('wDeals'), moneyEl=$('wMoney'), stack=$('wStack'), done=$('wDone'), b1=$('wB1'), b2=$('wB2'), v1=$('wV1'), v2=$('wV2');
+  var timers=[], still=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var DEALS=[['300 York Ave','Lease',48200],['45 Main St','Sale',112000],['1420 Peachtree','Lease',31000],['200 N Michigan','Sale',86000],['88 Grand St','Lease',22000],['1900 Broadway','Lease',27500]];
+  var BASE_N=9, BASE_M=412600, RECV=257300;
+  function later(f,ms){timers.push(setTimeout(f,ms));}
+  function commas(v){return '$'+Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+  function count(el,from,to,ms,fmt){fmt=fmt||commas; var t0=null; function f(ts){if(t0===null)t0=ts; var p=Math.min(1,(ts-t0)/ms); el.textContent=fmt(from+(to-from)*(1-Math.pow(1-p,3))); if(p<1)requestAnimationFrame(f);} requestAnimationFrame(f); later(function(){el.textContent=fmt(to);},ms+60);}
+  function bump(el){ el.classList.add('bump'); later(function(){el.classList.remove('bump');},600); }
+  var n, m, cards, doneN;
+  function paintMoney(){ var owed=Math.round(m*0.19); v1.textContent=commas(RECV); v2.textContent=commas(owed); b1.style.width=Math.min(100,RECV/(m)*100)+'%'; b2.style.width=Math.min(100,owed/(m)*100)+'%'; }
+  function reset(){
+    timers.forEach(clearTimeout); timers=[]; n=BASE_N; m=BASE_M; doneN=0; dealsEl.textContent=n; moneyEl.textContent=commas(m);
+    stack.innerHTML=''; done.innerHTML=''; cards=[];
+    DEALS.slice(0,4).forEach(function(d,i){ var c=document.createElement('div'); c.className='wcard'; c.style.transform='translateY('+(i*18)+'px)'; c.style.zIndex=10-i; c.innerHTML=d[0]+'<small>'+d[1]+'</small>'; c.__amt=d[2]; stack.appendChild(c); cards.push(c); });
+    b1.style.transition='none'; b2.style.transition='none'; paintMoney(); void b1.offsetWidth; b1.style.transition=''; b2.style.transition='';
   }
-  function frame(ts){
-    if(t0===null) t0=ts;
-    var el=ts-t0, ang=(el/PERIOD*360)%360;
-    ring.style.transform='rotateX(-6deg) rotateY('+(-ang)+'deg)';
-    // depth per card: 1 = facing viewer, -1 = behind
-    var best=-2, bi=0;
-    cards.forEach(function(c,i){
-      var rel=((i*STEP - ang)%360+360)%360; if(rel>180) rel-=360;
-      var d=Math.cos(rel*Math.PI/180);
-      c.style.opacity = d<0 ? 0 : (0.28+0.72*d).toFixed(3);
-      c.style.filter = 'brightness('+(0.62+0.38*Math.max(0,d)).toFixed(3)+')';
-      c.style.zIndex = Math.round(100+d*100);
-      if(d>best){best=d;bi=i;}
-    });
-    setFront(bi);
-    raf=requestAnimationFrame(frame);
+  function closeOne(){
+    var c=cards.shift(); if(!c) return;
+    // move to the closed stack
+    var r1=stack.getBoundingClientRect(), r2=done.getBoundingClientRect();
+    c.style.transform='translate('+(r2.left-r1.left)+'px,'+(doneN*18)+'px)'; c.style.zIndex=20+doneN;
+    later(function(){ c.classList.add('closed'); done.appendChild(c); c.style.transform='translateY('+(doneN*18)+'px)'; doneN++;
+      n++; dealsEl.textContent=n; bump(dealsEl);
+      count(moneyEl,m,m+c.__amt,700); m+=c.__amt; paintMoney(); bump(moneyEl);
+    },560);
+    // restack the remaining
+    cards.forEach(function(x,i){ x.style.transform='translateY('+(i*18)+'px)'; x.style.zIndex=10-i; });
+    // feed a new card at the back
+    var d=DEALS[(4+doneN)%DEALS.length]; var nc=document.createElement('div'); nc.className='wcard'; nc.style.opacity='0'; nc.style.transform='translateY('+(cards.length*18+10)+'px)'; nc.style.zIndex=10-cards.length; nc.innerHTML=d[0]+'<small>'+d[1]+'</small>'; nc.__amt=d[2]; stack.appendChild(nc); cards.push(nc);
+    later(function(){ nc.style.opacity='1'; nc.style.transform='translateY('+((cards.length-1)*18)+'px)'; },80);
   }
-  function start(){ if(running) return; running=true; t0=null; raf=requestAnimationFrame(frame); }
-  function stop(){ running=false; if(raf) cancelAnimationFrame(raf); }
-  if(still.matches || !ANIMATE){
-    ring.style.transform='rotateX(-6deg)'; cards.forEach(function(c,i){ var d=Math.cos(i*STEP*Math.PI/180); c.style.opacity=d<0?0:(0.28+0.72*d); }); setFront(0);
-  } else if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting) start(); else stop(); });},{threshold:.15}).observe($('orbit'));
-  } else start();
+  function loop(){ reset(); var t=1400; for(var k=0;k<4;k++){ later(closeOne,t); t+=1700; } later(loop,t+2600); }
+  function finished(){ reset(); for(var k=0;k<3;k++){ var c=cards.shift(); c.classList.add('closed'); done.appendChild(c); c.style.transform='translateY('+(k*18)+'px)'; n++; m+=c.__amt; } dealsEl.textContent=n; moneyEl.textContent=commas(m); paintMoney(); }
+  if(still.matches || !ANIMATE){ finished(); }
+  else if('IntersectionObserver' in window){ var running=false; new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting&&!running){running=true;loop();} else if(!e.isIntersecting&&running){running=false;timers.forEach(clearTimeout);timers=[];} });},{threshold:.2}).observe(document.querySelector('.win')); }
+  else loop();
 })();
 </script>
 
