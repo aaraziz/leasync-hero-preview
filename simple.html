@@ -49,58 +49,58 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
 .bar{display:flex; align-items:center; gap:10px; padding:9px 14px; background:var(--d-bg-2); border-bottom:1px solid var(--d-line);}
 .bar i{width:8px; height:8px; border-radius:50%; background:rgba(231,226,213,.2); display:inline-block; margin-right:5px;}
 .bar span{flex:1; text-align:center; color:var(--d-sage); opacity:.65; font-size:11.5px;}
-.hero{position:relative; padding:64px 26px 0; text-align:center; overflow:hidden;
+.hero{position:relative; padding:30px 26px 0; text-align:center; overflow:hidden;
   background:radial-gradient(120% 78% at 50% -8%, rgba(127,196,169,.10), transparent 62%), var(--d-bg);}
 .hero::before{content:""; position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(var(--d-line) 1px,transparent 1px),linear-gradient(90deg,var(--d-line) 1px,transparent 1px); background-size:74px 74px; opacity:.5; mask-image:radial-gradient(72% 55% at 50% 16%,#000,transparent 78%);}
 .hero > *{position:relative;}
 .kicker{display:inline-block; font-family:'Inter Tight',sans-serif; font-size:11.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--d-mint); border:1px solid rgba(127,196,169,.3); border-radius:999px; padding:5px 14px; background:rgba(127,196,169,.07);}
-.h1{font-size:clamp(30px,4.9vw,54px); font-weight:800; letter-spacing:-.036em; line-height:1.05; color:var(--d-bone); margin:22px auto 0; max-width:24ch;}
+.h1{font-size:clamp(26px,3.6vw,44px); font-weight:800; letter-spacing:-.036em; line-height:1.05; color:var(--d-bone); margin:16px auto 0; max-width:26ch;}
 .h1 em{font-style:normal; color:var(--d-mint); display:block; white-space:nowrap;}
 @media (max-width:640px){ .h1 em{white-space:normal;} }
-.sub{margin:18px auto 0; max-width:56ch; font-size:clamp(15px,1.85vw,18px); line-height:1.5; color:var(--d-sage); opacity:.92;}
-.btn{margin-top:26px; font-family:'Inter Tight',sans-serif; font-weight:700; font-size:15px; letter-spacing:.02em; border-radius:999px; padding:14px 30px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; background:var(--d-bone); color:var(--d-ink); transition:transform .16s, background .16s;}
+.sub{margin:12px auto 0; max-width:60ch; font-size:clamp(14px,1.5vw,16px); line-height:1.5; color:var(--d-sage); opacity:.92;}
+.btn{margin-top:18px; font-family:'Inter Tight',sans-serif; font-weight:700; font-size:14px; letter-spacing:.02em; border-radius:999px; padding:12px 26px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; background:var(--d-bone); color:var(--d-ink); transition:transform .16s, background .16s;}
 .btn:hover{transform:translateY(-1px); background:#fff;}
 .trust{margin-top:14px; font-size:12.5px; color:var(--d-ink-3);}
 
 /* ---- the marquee ---- */
-.mq-wrap{margin-top:44px;}
+.mq-wrap{margin-top:22px;}
 .mq-label{font-family:'Inter Tight',sans-serif; font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--d-ink-3); margin-bottom:16px;}
 .mq{position:relative; overflow:hidden; mask-image:linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); -webkit-mask-image:linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);}
 .mq-track{display:flex; align-items:center; gap:64px; width:max-content; animation:mq 38s linear infinite; padding:4px 0;}
 .mq:hover .mq-track{animation-play-state:paused;}
 @keyframes mq{from{transform:translate3d(0,0,0);} to{transform:translate3d(-50%,0,0);}}
-.logo{display:inline-flex; align-items:center; gap:10px; white-space:nowrap; color:var(--d-sage); opacity:.72; font-family:'Inter Tight',sans-serif; font-weight:800; letter-spacing:-.01em; font-size:20px; padding-right:64px;}
+.logo{display:inline-flex; align-items:center; gap:10px; white-space:nowrap; color:var(--d-sage); opacity:.72; font-family:'Inter Tight',sans-serif; font-weight:800; letter-spacing:-.01em; font-size:17px; padding-right:56px;}
 .logo small{font-family:'Inter',sans-serif; font-weight:600; font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; opacity:.7;}
 .logo .mark{width:22px; height:22px; border-radius:6px; background:rgba(231,226,213,.14); display:grid; place-items:center;}
 .logo .mark svg{width:13px; height:13px; color:var(--d-sage);}
-.logo.wide{letter-spacing:.32em; font-weight:500; font-size:17px;}
-.logo.serif{font-family:Georgia,'Times New Roman',serif; font-weight:700; letter-spacing:0; font-size:22px;}
+.logo.wide{letter-spacing:.32em; font-weight:500; font-size:14px;}
+.logo.serif{font-family:Georgia,'Times New Roman',serif; font-weight:700; letter-spacing:0; font-size:19px;}
 
 /* ---- the feature map ---- */
-.flow-wrap{margin:34px auto 0; max-width:1000px; padding:0 4px 50px; text-align:left;}
-.map{position:relative; height:520px; max-width:1000px; margin:0 auto;}
+.flow-wrap{margin:14px auto 0; max-width:1000px; padding:0 4px 18px; text-align:left;}
+.map{position:relative; height:276px; max-width:1000px; margin:0 auto;}
 .wires{position:absolute; inset:0; width:100%; height:100%; overflow:visible;}
-.wires line,.wires path{fill:none; stroke:var(--d-mint); stroke-width:1.5; vector-effect:non-scaling-stroke; stroke-dasharray:1; stroke-dashoffset:1; opacity:.55; transition:stroke-dashoffset .55s ease, opacity .3s, stroke .3s;}
+.wires line,.wires path{fill:none; stroke:var(--d-mint); stroke-width:1.5; vector-effect:non-scaling-stroke; stroke-dasharray:1; stroke-dashoffset:1; opacity:.55; transition:stroke-dashoffset .4s ease, opacity .3s, stroke .3s;}
 .wires .on{stroke-dashoffset:0;}
 .wires .chord{stroke:var(--d-bone); stroke-width:1.2; opacity:.7;}
-.hub{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:132px; height:132px; border-radius:50%; background:var(--d-card); color:var(--d-ink); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; box-shadow:0 0 0 8px rgba(127,196,169,.08), 0 20px 40px -18px rgba(0,0,0,.7); z-index:3; transition:box-shadow .4s;}
+.hub{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:104px; height:104px; border-radius:50%; background:var(--d-card); color:var(--d-ink); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; box-shadow:0 0 0 8px rgba(127,196,169,.08), 0 20px 40px -18px rgba(0,0,0,.7); z-index:3; transition:box-shadow .4s;}
 .hub.pulse{box-shadow:0 0 0 14px rgba(127,196,169,.16), 0 20px 40px -18px rgba(0,0,0,.7);}
-.hub .hub-mark{width:28px; height:28px; border-radius:50%; background:var(--d-green); color:var(--d-card); display:grid; place-items:center;}
+.hub .hub-mark{width:24px; height:24px; border-radius:50%; background:var(--d-green); color:var(--d-card); display:grid; place-items:center;}
 .hub .hub-mark svg{width:15px; height:15px;}
-.hub b{font-family:'Inter Tight',sans-serif; font-size:17px; font-weight:800; letter-spacing:-.02em; margin-top:4px;}
+.hub b{font-family:'Inter Tight',sans-serif; font-size:15px; font-weight:800; letter-spacing:-.02em; margin-top:4px;}
 .hub small{font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--d-ink-3); font-weight:600;}
-.node{position:absolute; transform:translate(-50%,-50%); display:inline-flex; align-items:center; gap:8px; padding:7px 12px 7px 8px; border-radius:999px; background:var(--d-bg); border:1px solid rgba(231,226,213,.16); color:var(--d-ink-3); font-family:'Inter Tight',sans-serif; font-size:12px; font-weight:700; letter-spacing:.01em; white-space:nowrap; z-index:2; transition:border-color .35s, color .35s, background .35s, transform .45s cubic-bezier(.34,1.5,.64,1), box-shadow .35s;}
-.node i{width:22px; height:22px; border-radius:50%; background:rgba(231,226,213,.1); display:grid; place-items:center; flex:none; transition:background .35s, color .35s;}
+.node{position:absolute; transform:translate(-50%,-50%); display:inline-flex; align-items:center; gap:7px; padding:5px 10px 5px 6px; border-radius:999px; background:var(--d-bg); border:1px solid rgba(231,226,213,.16); color:var(--d-ink-3); font-family:'Inter Tight',sans-serif; font-size:11.5px; font-weight:700; letter-spacing:.01em; white-space:nowrap; z-index:2; transition:border-color .35s, color .35s, background .35s, transform .45s cubic-bezier(.34,1.5,.64,1), box-shadow .35s;}
+.node i{width:20px; height:20px; border-radius:50%; background:rgba(231,226,213,.1); display:grid; place-items:center; flex:none; transition:background .35s, color .35s;}
 .node i svg{width:12px; height:12px;}
 .node.on{border-color:var(--d-mint); color:var(--d-bone); background:rgba(127,196,169,.1); transform:translate(-50%,-50%) scale(1.08); box-shadow:0 12px 26px -12px rgba(0,0,0,.6);}
 .node.on i{background:var(--d-mint); color:#12261E;}
 .node.done{border-color:rgba(127,196,169,.45); color:var(--d-sage);}
 .node.done i{background:rgba(127,196,169,.35); color:var(--d-bone);}
-.map-cap{text-align:center; margin:14px auto 0; max-width:60ch; min-height:3.2em; transition:opacity .3s;}
+.map-cap{text-align:center; margin:8px auto 0; max-width:64ch; min-height:2.6em; transition:opacity .3s;}
 .map-cap.fade{opacity:0;}
-.map-cap b{display:block; font-family:'Inter Tight',sans-serif; font-size:14px; font-weight:800; color:var(--d-bone); letter-spacing:-.01em;}
-.map-cap span{font-size:12.5px; color:var(--d-sage); line-height:1.45;}
-@media (max-width:820px){ .map{height:460px;} .node{font-size:11px; padding:5px 10px 5px 6px;} .node i{width:20px; height:20px;} }
+.map-cap b{display:inline; font-family:'Inter Tight',sans-serif; font-size:13px; margin-right:8px; font-weight:800; color:var(--d-bone); letter-spacing:-.01em;}
+.map-cap span{font-size:12px; color:var(--d-sage); line-height:1.45;}
+@media (max-width:820px){ .map{height:380px;} .node{font-size:11px; padding:5px 10px 5px 6px;} .node i{width:20px; height:20px;} }
 @media (max-width:600px){
   .map{height:auto; display:grid; grid-template-columns:1fr 1fr; gap:6px; padding-top:0;}
   .wires{display:none;} .hub{position:relative; left:auto; top:auto; transform:none; grid-column:1/-1; width:100%; height:auto; border-radius:12px; padding:12px; margin-bottom:6px; box-shadow:none;}
@@ -144,7 +144,7 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
         <!-- ===== the feature map: everything connected through Leasync ===== -->
         <div class="flow-wrap" aria-hidden="true">
           <div class="map" id="map">
-            <svg class="wires" viewBox="0 0 1000 520" preserveAspectRatio="none" id="wires"></svg>
+            <svg class="wires" viewBox="0 0 1000 276" preserveAspectRatio="none" id="wires"></svg>
             <div class="hub" id="hub"><span class="hub-mark"><svg viewBox="0 0 16 16" fill="none"><path d="M3 14V6l5-4 5 4v8M6.5 14v-4h3v4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><b>Leasync</b><small>one system</small></div>
             <div class="nodes" id="nodes"></div>
           </div>
@@ -161,7 +161,7 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
     </div>
     <div class="notes">
       <div class="note"><h4>1. Active companies, constant flow</h4><p>A logo marquee with no label above it: one row, scrolling right-to-left at about 38 seconds per lap, seamless, faded at both edges, pauses on hover. Pure CSS &mdash; the row is duplicated once and translated by &minus;50%. Wordmarks here are placeholders in type; the site already has the real logos (ARA, Tahari Realty, PrestonBend, Vantage and the others in today&rsquo;s trust bar) &mdash; drop those SVG/PNGs in as <code>&lt;img&gt;</code> and delete the text.</p></div>
-      <div class="note"><h4>2. The feature map</h4><p>Leasync sits in the centre; the twelve features from the official list sit around it in a ring. A mint spoke draws to each one in turn as it lights up, and the caption under the map names the feature and gives its one-line summary from your list. After the twelfth, the ring stays lit and the cross-links draw &mdash; email to contacts, contacts to tenants, tenants to spaces, spaces to deals, deals to commissions, agenda to dashboard &mdash; under the caption &ldquo;Everything connected.&rdquo; About 24 seconds, then it loops. On phones the ring becomes a two-column list that lights in the same order.</p></div>
+      <div class="note"><h4>2. The feature map</h4><p>Leasync sits in the centre; the twelve features from the official list sit around it in a ring. A mint spoke draws to each one in turn as it lights up, and the caption under the map names the feature and gives its one-line summary from your list. After the twelfth, the ring stays lit and the cross-links draw &mdash; email to contacts, contacts to tenants, tenants to spaces, spaces to deals, deals to commissions, agenda to dashboard &mdash; under the caption &ldquo;Everything connected.&rdquo; About 14 seconds, then it loops. The whole hero &mdash; pill, headline, button, logos, map and caption &mdash; fits in one screen at 1280&times;800 and up. On phones the ring becomes a two-column list that lights in the same order.</p></div>
       <div class="note"><h4>Kept from before</h4><ul><li>Pill, headline (mint second line), sub-line, one button. The small-print trust line is gone.</li><li>Inter / Inter Tight only, brand tokens only, no red or orange.</li><li>Reduced-motion: marquee and flow stand still.</li><li>Nothing forces the page wider than a phone.</li></ul></div>
       <div class="note"><h4>What&rsquo;s gone</h4><ul><li>The &ldquo;Preview our features below&rdquo; label and all thirteen previews.</li><li>Lisa, the inbox, tour books, marketplace &mdash; those move to feature sections lower on the page if you want them at all.</li></ul></div>
     </div>
@@ -195,8 +195,9 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
   // links between features that talk to each other (drawn after the ring completes)
   var CHORDS=[[2,4],[4,5],[5,7],[7,8],[8,9],[1,0],[6,5],[3,0]];
   var map=$('map'), wires=$('wires'), nodesEl=$('nodes'), hub=$('hub'), capT=$('capT'), capS=$('capS');
-  var W=1000, H=520, CX=500, CY=260, RX=405, RY=205;
+  var W=1000, H=276, CX=500, CY=138, RX=410, RY=108;
   var nodes=[], spokes=[], chords=[];
+  wires.setAttribute('viewBox','0 0 '+W+' '+H);   // keep the SVG in the same coordinate space as the node positions
   F.forEach(function(f,i){
     var ang=-Math.PI/2 + i*(2*Math.PI/F.length);
     var x=CX+RX*Math.cos(ang), y=CY+RY*Math.sin(ang);
@@ -204,7 +205,7 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
     n.innerHTML='<i><svg viewBox="0 0 16 16" fill="none"><path d="'+f[2]+'" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg></i>'+f[0];
     nodesEl.appendChild(n); nodes.push(n);
     var l=document.createElementNS('http://www.w3.org/2000/svg','line');
-    var ux=x-CX, uy=y-CY, d=Math.hypot(ux,uy), sx=CX+ux/d*70, sy=CY+uy/d*70;   // start at hub edge
+    var ux=x-CX, uy=y-CY, d=Math.hypot(ux,uy), sx=CX+ux/d*56, sy=CY+uy/d*56;   // start at hub edge
     l.setAttribute('x1',sx); l.setAttribute('y1',sy); l.setAttribute('x2',x); l.setAttribute('y2',y); l.setAttribute('pathLength','1');
     wires.appendChild(l); spokes.push(l);
     n.__xy=[x,y];
@@ -225,12 +226,12 @@ footer{padding:36px 0 70px; border-top:1px solid var(--line); font-size:13.5px; 
       later(function(){
         nodes.forEach(function(n,k){ n.classList.toggle('on',k===i); if(k<i) n.classList.add('done'); });
         spokes[i].classList.add('on'); hub.classList.add('pulse'); say(f[0],f[1]);
-        later(function(){hub.classList.remove('pulse');},450);
-      },t); t+=1500;
+        later(function(){hub.classList.remove('pulse');},350);
+      },t); t+=850;
     });
     later(function(){ nodes.forEach(function(n){n.classList.remove('on'); n.classList.add('done');}); say('Everything connected','Tenants link to spaces, spaces to landlords, landlords to deals, deals to commissions \u2014 one continuous, synced system.'); },t); t+=500;
-    chords.forEach(function(c){ later(function(){c.classList.add('on');},t); t+=260; });
-    t+=3600;
+    chords.forEach(function(c){ later(function(){c.classList.add('on');},t); t+=140; });
+    t+=2400;
     later(loop,t);
   }
   function finished(){ reset(); nodes.forEach(function(n){n.classList.add('done');}); spokes.concat(chords).forEach(function(l){l.classList.add('on');}); capT.textContent='Everything connected'; capS.textContent='Tenants link to spaces, spaces to landlords, landlords to deals, deals to commissions \u2014 one continuous, synced system.'; }
