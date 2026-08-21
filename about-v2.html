@@ -285,6 +285,45 @@ section{padding:52px 0; border-top:1px solid var(--line);}
 .env.fly{animation:flyout 1s cubic-bezier(.4,0,.6,1) forwards;}
 @keyframes flyout{0%{opacity:0; transform:translate(0,0) scale(.7);} 15%{opacity:1;} 100%{opacity:0; transform:translate(var(--dx),var(--dy)) scale(.9) rotate(var(--rot));}}
 
+
+/* ---- Chrome extension ---- */
+.a-ext .panel{display:grid; grid-template-columns:minmax(0,1fr) 236px; gap:14px; position:relative;}
+.ext-page{border-radius:10px; overflow:hidden; border:1px solid var(--d-line); background:var(--d-card); color:var(--d-ink); display:flex; flex-direction:column; min-width:0;}
+.ext-bar{display:flex; align-items:center; gap:5px; padding:6px 9px; background:rgba(28,43,36,.06); border-bottom:1px solid rgba(28,43,36,.08);}
+.ext-bar i{width:7px; height:7px; border-radius:50%; background:rgba(28,43,36,.18);}
+.ext-url{flex:1; text-align:center; font-size:9.5px; color:var(--d-ink-3); letter-spacing:.02em;}
+.ext-puz{width:19px; height:19px; border-radius:5px; display:grid; place-items:center; color:var(--d-ink-3); transition:background .3s, color .3s, transform .35s cubic-bezier(.34,1.5,.64,1);}
+.ext-puz svg{width:12px; height:12px;}
+.ext-puz.lit{background:var(--d-green); color:#fff; transform:scale(1.12);}
+.ext-body{padding:11px 12px; display:flex; flex-direction:column; min-width:0;}
+.ext-hero{height:74px; border-radius:7px; background:linear-gradient(135deg, rgba(31,107,84,.16), rgba(28,43,36,.07)); border:1px solid rgba(28,43,36,.07);}
+.ext-addr{font-family:'Inter',sans-serif; font-size:14px; font-weight:800; letter-spacing:-.02em; margin-top:10px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.ext-sub{font-size:10.5px; color:var(--d-ink-3); margin-top:2px;}
+.ext-specs{display:grid; grid-template-columns:repeat(4,1fr); gap:7px; margin-top:11px;}
+.ext-specs span{background:rgba(28,43,36,.045); border:1px solid rgba(28,43,36,.08); border-radius:6px; padding:6px 7px; min-width:0;}
+.ext-specs small{display:block; font-size:7.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--d-ink-3);}
+.ext-specs b{display:block; font-family:'Inter',sans-serif; font-size:12px; font-weight:800; letter-spacing:-.02em; margin-top:2px; white-space:nowrap;}
+/* the popup */
+.ext-pop{border-radius:10px; background:#FFFFFF; border:1px solid rgba(28,43,36,.12); box-shadow:0 18px 34px -16px rgba(0,0,0,.45); padding:10px 11px; color:var(--d-ink); align-self:start; opacity:0; transform:translateY(-10px) scale(.97); transition:opacity .35s, transform .45s cubic-bezier(.3,1.2,.4,1);}
+.ext-pop.on{opacity:1; transform:none;}
+.ep-h{display:flex; align-items:center; justify-content:space-between; gap:8px; padding-bottom:8px; border-bottom:1px solid rgba(28,43,36,.09);}
+.ep-brand{display:flex; align-items:center; gap:6px; font-family:'Inter',sans-serif; font-size:12px; font-weight:800; letter-spacing:-.01em;}
+.ep-brand i{width:15px; height:15px; border-radius:50%; border:1.5px solid var(--d-ink); display:block;}
+.ep-st{font-size:9px; font-weight:700; letter-spacing:.04em; color:#B4443A; transition:color .3s;}
+.ep-st.ok{color:var(--d-green);}
+.ep-note{font-size:10px; line-height:1.45; color:var(--d-ink-2); margin-top:8px;}
+.ep-btn{margin-top:9px; height:30px; border-radius:6px; background:var(--d-green); color:#fff; display:grid; place-items:center; font-family:'Inter',sans-serif; font-size:11.5px; font-weight:700; transition:transform .15s, background .25s;}
+.ep-btn.press{transform:scale(.96);} .ep-btn.done{background:var(--d-ink);}
+.ep-fields{display:flex; flex-direction:column; gap:5px; margin-top:9px;}
+.ef{display:flex; align-items:baseline; justify-content:space-between; gap:8px; font-size:9.5px; color:var(--d-ink-3); padding:4px 6px; border-radius:5px; background:rgba(28,43,36,.04); opacity:0; transform:translateX(6px); transition:opacity .3s, transform .35s;}
+.ef.on{opacity:1; transform:none;}
+.ef b{font-family:'Inter',sans-serif; font-size:10.5px; font-weight:800; color:var(--d-ink); letter-spacing:-.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60%;}
+.ep-done{display:flex; align-items:center; gap:6px; margin-top:9px; font-size:10.5px; font-weight:700; color:var(--d-green); opacity:0; transform:translateY(4px); transition:opacity .35s, transform .4s;}
+.ep-done svg{width:14px; height:14px; flex:none;}
+.ep-done.on{opacity:1; transform:none;}
+.a-ext .cursor{left:0; top:0;}
+@media (max-width:860px){ .a-ext .panel{grid-template-columns:1fr;} }
+
 /* ============================================================
    ACT 5 — inbox: Lisa reads an email, files it
    ============================================================ */
@@ -765,13 +804,14 @@ a{text-decoration:none; color:inherit;}
 @media (max-width:620px){ .mini{grid-template-columns:1fr;} }
 
 /* ---------- who it's for ---------- */
-.who{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px;}
+.who{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:28px;}
 .who .w{border:1px solid rgba(127,196,169,.28); border-radius:16px; padding:24px; background:rgba(127,196,169,.06);}
 .who .w .n{width:34px; height:34px; border-radius:10px; background:rgba(127,196,169,.16); color:#7FC4A9; display:grid; place-items:center; margin-bottom:14px;}
 .who .w .n svg{width:18px; height:18px;}
 .who .w h3{margin:0 0 8px; font-size:18px; font-weight:700; letter-spacing:-.02em; color:#F6F1E6;}
 .who .w p{margin:0; font-size:14.5px; line-height:1.6; color:#A9BCB3;}
-@media (max-width:900px){ .who{grid-template-columns:1fr;} }
+@media (max-width:1080px){ .who{grid-template-columns:1fr 1fr;} }
+@media (max-width:640px){ .who{grid-template-columns:1fr;} }
 
 /* ---------- what makes it different ---------- */
 .diff{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:28px;}
@@ -827,7 +867,7 @@ a{text-decoration:none; color:inherit;}
         </div>
         <div class="why">
           <div class="lb">Why we built this</div>
-          <p>Most commercial brokers run their whole business out of spreadsheets, group chats, and memory. That works until it doesn&rsquo;t &mdash; a tour goes unlogged, a follow-up slips, a commission check nobody chased. So we built Leasync in NYC, side by side with working brokers, to put listings, tenants, tours, deals, and commissions in one place.</p>
+          <p>Most commercial brokers run their whole business out of spreadsheets, group chats, and memory. That works until it doesn&rsquo;t &mdash; a tour goes unlogged, a follow-up slips, a commission check nobody chased. So we built Leasync side by side with working brokers, to put listings, tenants, tours, deals, and commissions in one place.</p>
           <p class="sig">&mdash; Aaron &amp; Mason, co-founders</p>
         </div>
       </div>
@@ -845,8 +885,8 @@ a{text-decoration:none; color:inherit;}
   <section class="sec" id="leasync-features">
     <span class="eyeb">The product</span>
     <div class="sec-h">
-      <h2>See Every Part Of It</h2>
-      <p>Thirteen features, one click each. Pick any of them &mdash; or let it play. Everything Leasync does for a commercial broker, leasing and investment sales alike.</p>
+      <h2>See It For Yourself</h2>
+      <p>Some of what Leasync does &mdash; one click each, or let it play. There is a good deal more inside, for leasing and investment sales alike.</p>
     </div>
     <div class="exp">
       <div class="tabs-row" id="tabsRow"></div>
@@ -870,14 +910,15 @@ a{text-decoration:none; color:inherit;}
             <button type="button" role="tab" data-act="2" aria-selected="false"><em>3</em>Ask Lisa<i class="prog"></i></button>
             <button type="button" role="tab" data-act="3" aria-selected="false"><em>4</em>Contacts<i class="prog"></i></button>
             <button type="button" role="tab" data-act="4" aria-selected="false"><em>5</em>Tenants<i class="prog"></i></button>
-            <button type="button" role="tab" data-act="5" aria-selected="false"><em>6</em>Tour books<i class="prog"></i></button>
-            <button type="button" role="tab" data-act="6" aria-selected="false"><em>7</em>Smart Match<i class="prog"></i></button>
-            <button type="button" role="tab" data-act="7" aria-selected="false"><em>8</em>Drag in LOI<i class="prog"></i></button>
-            <button type="button" role="tab" data-act="8" aria-selected="false"><em>9</em>Deal board<i class="prog"></i></button>
-            <button type="button" role="tab" data-act="9" aria-selected="false"><em>10</em>Commissions<i class="prog"></i></button>
-            <button type="button" role="tab" data-act="10" aria-selected="false"><em>11</em>Settings<i class="prog"></i></button>
-            <button type="button" role="tab" data-act="11" aria-selected="false"><em>12</em>Marketplace<i class="prog"></i></button>
-            <button type="button" role="tab" data-act="12" aria-selected="false"><em>13</em>Dashboard<i class="prog"></i></button>
+            <button type="button" role="tab" data-act="5" aria-selected="false"><em>6</em>Chrome extension<i class="prog"></i></button>
+            <button type="button" role="tab" data-act="6" aria-selected="false"><em>7</em>Tour books<i class="prog"></i></button>
+            <button type="button" role="tab" data-act="7" aria-selected="false"><em>8</em>Smart Match<i class="prog"></i></button>
+            <button type="button" role="tab" data-act="8" aria-selected="false"><em>9</em>Drag in LOI<i class="prog"></i></button>
+            <button type="button" role="tab" data-act="9" aria-selected="false"><em>10</em>Deal board<i class="prog"></i></button>
+            <button type="button" role="tab" data-act="10" aria-selected="false"><em>11</em>Commissions<i class="prog"></i></button>
+            <button type="button" role="tab" data-act="11" aria-selected="false"><em>12</em>Settings<i class="prog"></i></button>
+            <button type="button" role="tab" data-act="12" aria-selected="false"><em>13</em>Marketplace<i class="prog"></i></button>
+            <button type="button" role="tab" data-act="13" aria-selected="false"><em>14</em>Dashboard<i class="prog"></i></button>
           </div>
 
           <div class="stage-box" aria-hidden="true">
@@ -1051,6 +1092,36 @@ a{text-decoration:none; color:inherit;}
 
 
 <!-- ========== TOUR BOOKS ========== -->
+
+            <!-- ---------- CHROME EXTENSION ---------- -->
+            <div class="act a-ext" id="act-ext">
+              <div class="panel">
+                <span class="panel-label">Chrome extension</span>
+                <div class="ext-page">
+                  <div class="ext-bar"><i></i><i></i><i></i><span class="ext-url">listing page</span><span class="ext-puz" id="extPuz"><svg viewBox="0 0 16 16" fill="none"><path d="M6 2.5h4v2a1.5 1.5 0 0 0 3 0h.5v3.5h-2a1.5 1.5 0 0 0 0 3h2V13H10v-2a1.5 1.5 0 0 0-3 0v2H3.5V9.5h2a1.5 1.5 0 0 0 0-3h-2V3H6z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></span></div>
+                  <div class="ext-body">
+                    <div class="ext-hero"></div>
+                    <div class="ext-addr">1420 Peachtree St NE, Suite 100</div>
+                    <div class="ext-sub">Retail &middot; ground floor &middot; available now</div>
+                    <div class="ext-specs"><span><small>Size</small><b>2,400 SF</b></span><span><small>Asking</small><b>$48/SF</b></span><span><small>Frontage</small><b>Corner</b></span><span><small>Term</small><b>10 yr</b></span></div>
+                  </div>
+                </div>
+                <div class="ext-pop" id="extPop">
+                  <div class="ep-h"><span class="ep-brand"><i></i>Leasync</span><span class="ep-st" id="epSt">Not connected</span></div>
+                  <div class="ep-note" id="epNote">Open a listing &mdash; the save panel appears on the page automatically.</div>
+                  <div class="ep-btn" id="epBtn"><span id="epBtnTxt">Show save panel</span></div>
+                  <div class="ep-fields" id="epFields">
+                    <div class="ef"><span>Address</span><b>1420 Peachtree St NE</b></div>
+                    <div class="ef"><span>Size</span><b>2,400 SF</b></div>
+                    <div class="ef"><span>Asking</span><b>$48/SF</b></div>
+                    <div class="ef"><span>Use</span><b>Retail &middot; corner</b></div>
+                  </div>
+                  <div class="ep-done" id="epDone"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.2" stroke="currentColor" stroke-width="1.6"/><path d="M6.6 10.2 8.9 12.5 13.4 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Saved to your Spaces</div>
+                </div>
+                <div class="cursor" id="cursorExt"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 2.4 17.2 10.4l-5.6 1.1-2.6 5.2L4 2.4Z" fill="#F6F1E6" stroke="#1C2B24" stroke-width="1.1" stroke-linejoin="round"/></svg></div>
+              </div>
+            </div>
+
 <div class="act a-tour" id="act-tour">
   <div class="panel">
     <span class="panel-label">Tour book &middot; Brick Coffee</span>
@@ -1325,7 +1396,7 @@ a{text-decoration:none; color:inherit;}
       <div class="m"><h4>Documents</h4><p>Files on every space, client, broker and landlord. Inline previews for PDFs and images, plus secure public links so clients can view without an account.</p></div>
       <div class="m"><h4>Notifications</h4><p>Pinged the moment a deal you&rsquo;re on changes stage or you&rsquo;re added as an agent. @mention a teammate in any note and it lands in their inbox.</p></div>
       <div class="m"><h4>Permissions</h4><p>Admin, manager and agent roles. Five access levels per collection, set separately for managers and agents, so the right people see the numbers.</p></div>
-      <div class="m"><h4>Security &amp; import</h4><p>Optional client-side AES&ndash;256&ndash;GCM encryption on commission figures. Bring existing data in by sync or template upload.</p></div>
+      <div class="m"><h4>Security &amp; import</h4><p>Optional client-side AES&ndash;256&ndash;GCM encryption on commission figures. Bring existing data in by sync or template upload, in any market you work.</p></div>
     </div>
   </section>
 
@@ -1333,8 +1404,8 @@ a{text-decoration:none; color:inherit;}
   <section class="sec">
     <span class="eyeb">Who it&rsquo;s for</span>
     <div class="sec-h">
-      <h2>Built For Both Sides Of The Business</h2>
-      <p>Leasing and investment sales run on the same board, with the same contacts, the same documents and the same commission engine.</p>
+      <h2>Built For Everyone On The Deal</h2>
+      <p>Leasing and investment sales run on the same board &mdash; and landlords, owners and management teams work the same records from their own side.</p>
     </div>
     <div class="who">
       <div class="w">
@@ -1345,12 +1416,17 @@ a{text-decoration:none; color:inherit;}
       <div class="w">
         <span class="n"><svg viewBox="0 0 16 16" fill="none"><path d="M2 13h12M4 13V7M8 13V3M12 13V9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
         <h3>Investment sales brokers</h3>
-        <p>The same pipeline, tuned for a sale instead of a lease. Buyers and owners alongside tenants and landlords, with co-broke splits handled the same way.</p>
+        <p>The same pipeline, tuned for a sale instead of a lease. Buyers and owners alongside tenants and landlords, with co&#8209;broke splits handled the same way.</p>
+      </div>
+      <div class="w">
+        <span class="n"><svg viewBox="0 0 16 16" fill="none"><path d="M2 14h12M4 14V4h8v10M6.5 7h3M6.5 10h3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+        <h3>Landlords &amp; owners</h3>
+        <p>Your portfolio, your availabilities and every lead against them. See which broker is working which space, what has been offered, and where each deal stands.</p>
       </div>
       <div class="w">
         <span class="n"><svg viewBox="0 0 16 16" fill="none"><path d="M8 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM3 14c.6-2.6 2.6-4 5-4s4.4 1.4 5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-        <h3>Owners &amp; principals</h3>
-        <p>Zoom out from one broker to the whole organisation. Per-agent analytics, permissioned access, and one view of what the firm has produced.</p>
+        <h3>Management &amp; principals</h3>
+        <p>Zoom from one agent to the whole organisation. Per-agent analytics, permissioned access by role, and one view of what the firm has produced.</p>
       </div>
     </div>
   </section>
@@ -1363,7 +1439,7 @@ a{text-decoration:none; color:inherit;}
       <p>Four things you can check for yourself before you ever talk to us.</p>
     </div>
     <div class="diff">
-      <div class="d"><h3>Built by a working broker</h3><p>Aaron runs <b>ARA</b>, a commercial brokerage in New York, and uses Leasync on his own deals. Mason builds it. Every feature came out of a real problem on a real deal, not a product roadmap workshop.</p></div>
+      <div class="d"><h3>Built by a working broker</h3><p>Aaron runs <b>ARA</b>, a commercial brokerage, and uses Leasync on his own deals. Mason builds it. Every feature came out of a real problem on a real deal, not a product roadmap workshop.</p></div>
       <div class="d"><h3>It&rsquo;s your book, not a landlord&rsquo;s</h3><p>Landlord platforms exist to track buildings. Leasync exists to track <b>your</b> deals, your relationships and what you&rsquo;re owed &mdash; and it stays yours.</p></div>
       <div class="d"><h3>Co&ndash;broke splits and payouts, tracked</h3><p>Every commission broken into installments with due and received dates, per-agent and co-broke shares in a clean table, and a running list of what&rsquo;s overdue. Most CRMs stop at the signed deal.</p></div>
       <div class="d"><h3>Published pricing</h3><p>Our prices are on the site: a free plan, paid plans from <b>$59</b>, and a 30&ndash;day money-back guarantee. No &ldquo;contact sales&rdquo; to find out what it costs.</p></div>
@@ -1375,11 +1451,11 @@ a{text-decoration:none; color:inherit;}
     <span class="eyeb">About our founders</span>
     <div class="sec-h">
       <h2>A Broker And An Engineer</h2>
-      <p>Leasync was built in New York, side by side with working brokers.</p>
+      <p>Built side by side with working brokers, on real deals.</p>
     </div>
     <div class="fnd">
       <div class="f"><span class="av">AA</span><div><div class="nm">Aaron Aziz</div><div class="rl">Co-founder</div>
-        <p>A working commercial real estate broker and founder of ARA, a New York brokerage. Aaron ran his own deals on spreadsheets, group chats and memory for years &mdash; Leasync is the system he wanted instead.</p></div></div>
+        <p>A working commercial real estate broker and founder of ARA, a commercial brokerage. Aaron ran his own deals on spreadsheets, group chats and memory for years &mdash; Leasync is the system he wanted instead.</p></div></div>
       <div class="f"><span class="av">MK</span><div><div class="nm">Mason Kalaty</div><div class="rl">Co-founder</div>
         <p>Engineer. Mason turns the day-to-day of a brokerage into software &mdash; the pipeline, the commission math, the email sync, and Lisa, the assistant that reads your account and tells you what to do next.</p></div></div>
     </div>
@@ -1613,6 +1689,34 @@ a{text-decoration:none; color:inherit;}
     return run(steps);
   }
 
+
+  /* ============ CHROME EXTENSION ============ */
+  var extPop=$('extPop'), epSt=$('epSt'), epNote=$('epNote'), epBtn=$('epBtn'), epBtnTxt=$('epBtnTxt'), epDone=$('epDone'), extPuz=$('extPuz'), cursorExt=$('cursorExt');
+  var efs=q('#epFields .ef');
+  function resetExt(){
+    extPop.classList.remove('on'); epSt.className='ep-st'; epSt.textContent='Not connected';
+    epNote.innerHTML='Open a listing &mdash; the save panel appears on the page automatically.';
+    epBtn.className='ep-btn'; epBtnTxt.textContent='Show save panel';
+    off(efs); epDone.classList.remove('on'); extPuz.classList.remove('lit'); cursorExt.classList.remove('on');
+  }
+  function playExt(){
+    resetExt();
+    var steps=[
+      [ 400, function(){ extPuz.classList.add('lit'); }],
+      [ 350, function(){ extPop.classList.add('on'); }],
+      [ 650, function(){ epSt.className='ep-st ok'; epSt.textContent='Connected'; }],
+      [ 450, function(){ cursorExt.classList.add('on'); cursorTo(cursorExt, epBtn, 60, 15); }],
+      [ 700, function(){ epBtn.classList.add('press'); }],
+      [ 160, function(){ epBtn.classList.remove('press'); epBtnTxt.textContent='Reading the page'; epNote.innerHTML='Pulling the address, size, asking rent and use straight off the listing.'; cursorExt.classList.remove('on'); }]
+    ];
+    steps=steps.concat(stagger(efs, 500, 260));
+    steps.push([ 400, function(){ epBtn.classList.add('done'); epBtnTxt.textContent='Save to Leasync'; }]);
+    steps.push([ 550, function(){ epBtn.classList.add('press'); }]);
+    steps.push([ 160, function(){ epBtn.classList.remove('press'); epDone.classList.add('on'); epNote.innerHTML='One click and it is in your Spaces &mdash; no re-typing, no copy&ndash;paste.'; }]);
+    steps.push([2400, noop ]);
+    return run(steps);
+  }
+
   /* ============ TOUR BOOKS ============ */
   var tbRows = q('[data-tb]'), tbBtn = $('tbBtn'), tbBtnTxt = $('tbBtnTxt'), tbN = $('tbN'), pgs = q('[data-pg]'), tbReady = $('tbReady'), cursorTb = $('cursorTb');
   function resetTour() {
@@ -1620,6 +1724,7 @@ a{text-decoration:none; color:inherit;}
     off(pgs); tbReady.classList.remove('on'); cursorTb.classList.remove('on');
   }
   function playTour() {
+    resetExt(); extPop.classList.add('on'); epSt.className='ep-st ok'; epSt.textContent='Connected'; on(efs); epDone.classList.add('on'); extPuz.classList.add('lit'); epBtn.classList.add('done'); epBtnTxt.textContent='Save to Leasync';
     resetTour();
     var pick = [0, 1, 2], steps = [[ 400, function () { cursorTb.classList.add('on'); cursorTo(cursorTb, tbRows[0].querySelector('.cb')); }]];
     pick.forEach(function (i, k) {
@@ -1796,6 +1901,7 @@ a{text-decoration:none; color:inherit;}
     { id: 'act-ask',      play: playAsk,      cap: 'Ask Lisa anything. She pulls your real data instantly &mdash; clean, organised, easy to read.' },
     { id: 'act-contacts', play: playContacts, cap: 'Sync your email contacts and Lisa sorts them &mdash; broker, landlord, tenant &mdash; so your database builds itself.' },
     { id: 'act-tenants',  play: playTenants,  cap: 'Open a tenant and everything is in one view. Tag a teammate and it lands in their agenda; set a reminder and it hits your calendar.' },
+    { id: 'act-ext',      play: playExt,      cap: 'Browsing a listing anywhere? One click on the Leasync extension and the space is in your Spaces &mdash; address, size, asking rent and all.' },
     { id: 'act-tour',     play: playTour,     cap: 'Pick any set of spaces and Leasync generates a polished tour book, ready to send.' },
     { id: 'act3',         play: playSpaces,   cap: 'Work a listing to an exclusive, then Smart Match finds the tenants who fit. One click emails all of them.' },
     { id: 'act0',         play: playLoi,      cap: 'Drag in the LOI and Lisa fills the deal &mdash; commission agreement and co&#8209;broke split included.' },
@@ -1868,32 +1974,104 @@ a{text-decoration:none; color:inherit;}
   if(nav && row) row.appendChild(nav);
 
   var F={
-    'AI Agenda':['Hit sync and Lisa scans the whole account, then orders what to tackle next',
-      ['Notified the moment a deal you&rsquo;re on changes stage','@mention a teammate in any note and it lands in their inbox','Live unread badge in the sidebar so nothing slips past','Tagged items take you straight to the record in one click']],
-    'Email':['Your inbox lives inside Leasync — Gmail and Outlook, synced.',
-      ['Full inbox and compose inside every client, broker and landlord profile','Connects to existing Gmail or Outlook by OAuth &mdash; no separate setup','Forward an email lead and a tenant record is created automatically','Blast from any space &mdash; each recipient gets an individual email']],
+    'AI Agenda':['Hit sync and Lisa reads the whole account, then orders what to tackle next.',
+      ['Scans deals, tenants, spaces, email and commissions in one pass',
+       'Overdue items float to the top, with the amount and the deal attached',
+       'Notified the moment a deal you&rsquo;re on changes stage',
+       '@mention a teammate in any note and it lands in their inbox',
+       'Live unread badge in the sidebar so nothing slips past',
+       'Every item is a link &mdash; one click and you are on the record']],
+    'Email':['Your inbox lives inside Leasync &mdash; Gmail and Outlook, synced both ways.',
+      ['Full inbox and compose inside every client, broker and landlord profile',
+       'Connects to existing Gmail or Outlook by OAuth &mdash; no separate setup',
+       'CC, BCC and full thread navigation without leaving the dialog',
+       'Lisa summarises any email and pulls the contact out of it',
+       'Forward an email lead and a tenant record is created automatically',
+       'Blast from any space &mdash; each recipient gets an individual, personalised email']],
     'Ask Lisa':['Ask about your book in plain English and get real data back.',
-      ['She knows your tenants, spaces, deals and activity','&ldquo;Who should I follow up with today?&rdquo; &mdash; prioritised, overdue first','&ldquo;List my pending commissions&rdquo; &mdash; totals, dates, agents, one table','Answers from your data, not generic AI advice. Currently in beta.']],
+      ['She knows your tenants, spaces, deals, commissions and activity',
+       '&ldquo;Who should I follow up with today?&rdquo; &mdash; prioritised, overdue first',
+       '&ldquo;List my pending commissions&rdquo; &mdash; totals, due dates, agents, one table',
+       '&ldquo;How many deals did I close this month?&rdquo; &mdash; counted from your records',
+       'Answers come from your data, not generic AI advice',
+       'Currently in beta and improving with every conversation']],
     'Contacts':['Every broker, landlord and owner your team deals with, in one directory.',
-      ['Phone, email, company and ownership context in one place','Owned listings shown directly on every landlord profile','Email and reply from a profile through Gmail or Outlook','Timestamped per-author notes &mdash; every conversation has a paper trail']],
+      ['Full directories of external brokers, landlords and ownership groups',
+       'Phone, email, company and ownership context in one place',
+       'Owned listings shown directly on every landlord profile',
+       'Email and reply from a profile through Gmail or Outlook',
+       'Sync your email contacts and Lisa sorts them by type for you',
+       'Timestamped per-author notes &mdash; every conversation has a paper trail']],
     'Tenants':['Leads and signed tenants in one module, with everything they need.',
-      ['Convert the moment a deal signs; revert if it falls through','Price, size, areas, use, concept, venting and term on every profile','Last-contacted and follow-up dates with priority levels','Recommended spaces with toured dates and per-tour notes']],
+      ['Convert the moment a deal signs; revert if it falls through',
+       'Price, size, areas, use, concept, gas, venting and term on every profile',
+       'Last-contacted and follow-up dates with priority levels for triage',
+       'Recommended spaces with contacted dates, toured dates and per-tour notes',
+       'Tag a teammate for access; set a reminder and it hits your calendar',
+       'Export a branded recommended-spaces PDF in a single click']],
+    'Chrome extension':['Browsing a listing anywhere? Save it to Leasync without leaving the page.',
+      ['Open any listing and the Leasync save panel appears on the page',
+       'One click pulls the address, size, asking rent and use off the page',
+       'The space lands in your Spaces module &mdash; no re-typing, no copy&ndash;paste',
+       'Duplicate check, so the same address does not land twice',
+       'Add a note or mark it an exclusive candidate before you save',
+       'Stays signed in to your account, so saving is always one click']],
     'Tour books':['Select any set of spaces and send a polished book.',
-      ['Branded tour book exported in a single click','Inline previews for PDFs and images &mdash; no download needed','Secure public links so clients can view without an account','Org-wide library tabbed by photos, documents, flyers and floor plans']],
+      ['Branded tour book generated and exported in a single click',
+       'Pick any combination of spaces &mdash; yours or from the marketplace',
+       'Inline previews for PDFs and images &mdash; no download needed',
+       'Secure public links so clients can view without an account',
+       'Org-wide library tabbed by photos, documents, flyers and floor plans',
+       'Toured dates and per-tour notes written back to the tenant record']],
     'Smart Match':['Work a listing to an exclusive, then let Leasync find the tenants.',
-      ['One Spaces module with a built-in toggle for exclusives','Address, unit, asking rent, status, expiry, use, possession, access','Multi-floor sizing, plus venting and gas for restaurant searches','Smart Match connects the right tenants &mdash; then blast them all at once']],
+      ['One Spaces module with a built-in toggle for exclusives &mdash; no separate nav',
+       'Address, unit, asking rent, status, expiry, use, possession and access',
+       'Multi-floor sizing &mdash; ground, lower, basement, mezzanine and above',
+       'Venting and gas tracked, which matters on every restaurant search',
+       'Smart Match connects the tenants whose requirements actually fit',
+       'One-click email blast to all of them, personalised per recipient']],
     'Drag in LOI':['Drop the paperwork in and Lisa fills the deal.',
-      ['LOI in &rarr; terms, commission agreement and splits filled automatically','Rent, term, free months, key money and PPSF tracked as fields','Set an annual escalation % and year-by-year rent is computed for you','Per-agent and co&#8209;broke splits built in from the start']],
+      ['LOI in &rarr; terms, commission agreement and splits filled automatically',
+       'Rent, term, free months, key money and PPSF captured as real fields',
+       'Set an annual escalation % and year-by-year rent is computed for you',
+       'Per-agent and co&#8209;broke splits built in from the start',
+       'Tenant repped by a co&#8209;broker handled as a first-class case',
+       'Documents attach to the deal, the space and the tenant at once']],
     'Deal board':['One board for the whole book &mdash; leasing and investment sales.',
-      ['Drag-and-drop stages you define; the team is notified on every move','Leasing and sales pipelines side by side, same engine','One-click &ldquo;waiting on&rdquo; shows whose turn it is at a glance','Mark it signed and a commission entry is created automatically']],
+      ['Drag-and-drop stages you define; the team is notified on every move',
+       'Leasing and sales pipelines side by side, same engine underneath',
+       'List view or board view, whichever way you think',
+       'One-click &ldquo;waiting on&rdquo; shows whose turn it is at a glance',
+       'Every core term on the card &mdash; rent, term, commission, split',
+       'Mark it signed and a commission entry is created automatically']],
     'Commissions':['Every commission tracked to the dollar, until it lands.',
-      ['Break a commission into installments with due and received dates','Status auto-tracked: pending, partial, complete or overdue','Per-agent and co&#8209;broke shares in a clean breakdown table','Optional client-side AES&ndash;256&ndash;GCM encryption on the numbers']],
-    'Settings':['Make it yours &mdash; roles, rates, regions and themes.',
-      ['Admin, manager and agent roles with sensible defaults','Five access levels per collection, set separately by role','Per-member split percentages applied automatically to their deals','Commission rate ladder and org profile that flows onto every LOI']],
+      ['Break a commission into installments with due and received dates',
+       'Status auto-tracked: pending, partial, complete or overdue',
+       'Per-agent and co&#8209;broke shares laid out in a clean breakdown table',
+       'Annual rent escalation flows through the commission math automatically',
+       'Overdue and next-seven-days alerts surface on the dashboard',
+       'Optional client-side AES&ndash;256&ndash;GCM encryption on the numbers']],
+    'Settings':['Make it yours &mdash; roles, rates, regions, themes and access.',
+      ['Admin, manager and agent roles with sensible defaults',
+       'Five access levels per collection, set separately for managers and agents',
+       'Per-member split percentages applied automatically to their deals',
+       'Commission rate ladder set once and used everywhere',
+       'Org profile, email signature and branding that flow onto every LOI',
+       'Analytics profile per agent, showing everything they have produced']],
     'Marketplace':['A private network where Leasync brokers share listings.',
-      ['Live listings and tenant demand from working brokers','New spaces added by the minute','Browse before you sign up &mdash; no account, no card','Bring a listing to the network straight from your Spaces module']],
+      ['Live listings and tenant demand from working brokers',
+       'New spaces added by the minute',
+       'Browse before you sign up &mdash; no account, no card',
+       'Push one of your own listings to the network from the Spaces module',
+       'Filter by market, size, use and asking rent',
+       'Reach the listing broker without leaving Leasync']],
     'Dashboard':['The moment you log in: your whole book, at a glance.',
-      ['Real-time KPIs across active deals, pipeline value and commissions','Alerts for what&rsquo;s overdue and what&rsquo;s due in the next seven days','Upcoming calendar events from Google or Outlook','Org-wide or per-agent &mdash; switch lenses with one click']]
+      ['Real-time KPIs across active deals, pipeline value and commissions',
+       'Deals in progress, closed this month and closed this year',
+       'Alerts for what is overdue and what is due in the next seven days',
+       'Upcoming calendar events from Google or Outlook',
+       'Your exclusives and total SF placed, all-time',
+       'Org-wide or per-agent &mdash; switch lenses with one click']]
   };
   var CHK='<svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.2" stroke="currentColor" stroke-width="1.6"/><path d="M6.6 10.2 8.9 12.5 13.4 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var last=null;
